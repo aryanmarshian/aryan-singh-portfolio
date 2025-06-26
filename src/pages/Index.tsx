@@ -155,14 +155,7 @@ const Index = () => {
         }}>
             <h1 className="text-xl md:text-2xl text-gray-300 mb-3">Hello! I'm Aryan.</h1>
             <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
-              Designing digital
-              <br />
-              <span className="bg-gradient-to-r from-gray-300 to-gray-500 bg-clip-text text-transparent">
-                ML solutions
-              </span>{' '}
-              with emphasis
-              <br />
-              on <span className="text-gray-400">visual intelligence</span>
+              Specializing in machine learning solutions driven by visual intelligence and real-world impact.
             </h2>
             <p className="text-lg md:text-xl text-gray-400 mb-6 max-w-2xl mx-auto">Machine Learning | Computer Vision | Deep Learning</p>
             <p className="text-base text-gray-300 mb-8 max-w-xl mx-auto">
