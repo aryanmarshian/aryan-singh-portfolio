@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
+
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const {
@@ -139,22 +140,19 @@ const Index = () => {
 
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
-        <motion.div style={{
-        y
-      }} className="absolute inset-0 bg-gradient-to-r from-gray-600/20 to-gray-500/20 rounded-full blur-3xl transform -translate-y-1/2" />
+        <motion.div
+          style={{ y }}
+          className="absolute inset-0 bg-gradient-to-r from-gray-600/20 to-gray-500/20 rounded-full blur-3xl transform -translate-y-1/2"
+        />
         
         <div className="container mx-auto px-6 text-center relative z-10 max-w-4xl">
-          <motion.div initial={{
-          opacity: 0,
-          y: 50
-        }} animate={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 0.8
-        }}>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
             <h1 className="text-xl md:text-2xl text-gray-300 mb-3">Hello! I'm Aryan.</h1>
-            <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight bg-gradient-to-r from-gray-200 via-gray-400 to-gray-600 bg-clip-text text-transparent">
               Specializing in machine learning solutions driven by visual intelligence and real-world impact.
             </h2>
             <p className="text-lg md:text-xl text-gray-400 mb-6 max-w-2xl mx-auto">Machine Learning | Computer Vision | Deep Learning</p>
@@ -563,4 +561,5 @@ const Index = () => {
       </footer>
     </div>;
 };
+
 export default Index;
