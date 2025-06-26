@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, Github, Linkedin, Mail, Download, ExternalLink, Menu, X } from 'lucide-react';
@@ -8,195 +7,152 @@ import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
-
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { scrollYProgress } = useScroll();
+  const {
+    scrollYProgress
+  } = useScroll();
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
-  const { toast } = useToast();
-
-  const skills = [
-    'Python', 'JavaScript', 'React', 'Node.js', 'FastAPI', 'OpenAI', 'LangChain', 
-    'UIPath', 'Streamlit', 'Hugging Face', 'AWS SageMaker', 'Docker', 'Kubernetes', 
-    'MongoDB Atlas', 'MySQL', 'MongoDB', 'BERT', 'GPT', 'CNNs', 'YOLO', 
-    'Vision Transformers', 'OpenCV', 'Tesseract'
-  ];
-
-  const projects = [
-    {
-      title: "Real-Time Drone Detection System",
-      description: "Real-time drone detection system integrating YOLOv8 for fast object detection and Vision Transformers for precise validation with parallel processing and decision fusion.",
-      techStack: ["YOLOv8", "Vision Transformers", "Streamlit", "MongoDB"],
-      tags: ["#ComputerVision", "#ObjectDetection", "#RealTime"],
-      githubUrl: "https://github.com/aryanmarshian",
-      featured: true
-    },
-    {
-      title: "Student Dropout Risk Predictor",
-      description: "Machine learning model using XGBoost to predict student dropout risk based on academic and demographic data with class imbalance handling and real-time assessment.",
-      techStack: ["XGBoost", "Streamlit", "Python", "Scikit-learn"],
-      tags: ["#MachineLearning", "#Education", "#Prediction"],
-      githubUrl: "https://github.com/aryanmarshian",
-      featured: true
-    },
-    {
-      title: "FeedbackSense: Customer Sentiment Analyzer",
-      description: "Sentiment classification pipeline using NLTK for text preprocessing and Logistic Regression to analyze customer feedback with stemming, stopword removal, and TF-IDF vectorization.",
-      techStack: ["NLTK", "Logistic Regression", "Python", "TF-IDF"],
-      tags: ["#NLP", "#SentimentAnalysis", "#CustomerInsights"],
-      githubUrl: "https://github.com/aryanmarshian",
-      featured: true
-    },
-    {
-      title: "AI Email Sorting & Priority Highlighting",
-      description: "Automated email categorization & prioritization for GSuite inboxes using NLP models and UiPath-based RPA bots, reducing email processing time by 50%.",
-      techStack: ["UiPath", "NLP", "FastAPI", "GSuite"],
-      tags: ["#RPA", "#Automation", "#EmailProcessing"],
-      githubUrl: "https://github.com/aryanmarshian",
-      featured: false
-    },
-    {
-      title: "SpeakEase: AI Speech Therapy App",
-      description: "Application leveraging OpenAI's Whisper and Google's Gemini API to assist children with stuttering, tracking progress and providing personalized counselling support.",
-      techStack: ["OpenAI Whisper", "Gemini API", "Python", "React"],
-      tags: ["#AI", "#HealthTech", "#SpeechTherapy"],
-      githubUrl: "https://github.com/aryanmarshian",
-      featured: false
-    },
-    {
-      title: "Zen Zone: AI-Powered Mental Health Companion",
-      description: "Vite + React web app for student mental health and substance abuse support with MongoDB and Gemini AI integration. Completed in 24 hours, ranked top 5 in Wincibl hackathon.",
-      techStack: ["Vite", "React", "MongoDB", "Gemini AI"],
-      tags: ["#MentalHealth", "#AI", "#Hackathon"],
-      githubUrl: "https://github.com/aryanmarshian",
-      featured: false
-    }
-  ];
-
-  const experiences = [
-    {
-      company: "VIT Chennai",
-      role: "Summer Research Intern Under Prof. Karthik R",
-      timeline: "May 2024 – July 2024",
-      contributions: [
-        "Engineered an advanced plant leaf disease classification model, combining Vision Transformers (ViT) with custom CNN architecture using RSCA, Coordinate Attention, Condensation Attention, and CycleGAN techniques",
-        "Achieved 88% accuracy (previous baseline: 82%) and co-authored a research paper on novel deep learning techniques for plant disease identification"
-      ]
-    },
-    {
-      company: "R Systems, Noida",
-      role: "AI Intern",
-      timeline: "Aug 2023 – Dec 2023",
-      contributions: [
-        "Developed a SQL Query Generator leveraging OpenAI API & LangChain, enabling non-technical users to interact with SQL databases using natural language",
-        "Designed and optimized AI-driven database automation workflows, improving query efficiency by 30%",
-        "Conducted research on LLM-powered enterprise AI solutions, integrating OpenAI's GPT models for data-driven applications"
-      ]
-    }
-  ];
-
-  const education = [
-    {
-      institution: "Vellore Institute of Technology, Chennai",
-      degree: "Bachelor of Technology in Computer Science specialization in Robotics and AI",
-      timeline: "2021 – 2025",
-      grade: "CGPA: 8.18"
-    },
-    {
-      institution: "Seth Anand Ram Jaipuria School, Ghaziabad",
-      degree: "Senior Secondary, Science",
-      timeline: "2015 – 2021",
-      grade: "86%"
-    }
-  ];
-
-  const research = [
-    {
-      title: "Advanced Plant Leaf Disease Classification using Vision Transformers and Custom CNN",
-      publication: "Research Paper (In Progress) - VIT Chennai",
-      abstract: "Novel deep learning approach combining Vision Transformers with custom CNN architecture achieving 88% accuracy in plant disease identification."
-    }
-  ];
-
+  const {
+    toast
+  } = useToast();
+  const skills = ['Python', 'JavaScript', 'React', 'Node.js', 'FastAPI', 'OpenAI', 'LangChain', 'UIPath', 'Streamlit', 'Hugging Face', 'AWS SageMaker', 'Docker', 'Kubernetes', 'MongoDB Atlas', 'MySQL', 'MongoDB', 'BERT', 'GPT', 'CNNs', 'YOLO', 'Vision Transformers', 'OpenCV', 'Tesseract'];
+  const projects = [{
+    title: "Real-Time Drone Detection System",
+    description: "Real-time drone detection system integrating YOLOv8 for fast object detection and Vision Transformers for precise validation with parallel processing and decision fusion.",
+    techStack: ["YOLOv8", "Vision Transformers", "Streamlit", "MongoDB"],
+    tags: ["#ComputerVision", "#ObjectDetection", "#RealTime"],
+    githubUrl: "https://github.com/aryanmarshian",
+    featured: true
+  }, {
+    title: "Student Dropout Risk Predictor",
+    description: "Machine learning model using XGBoost to predict student dropout risk based on academic and demographic data with class imbalance handling and real-time assessment.",
+    techStack: ["XGBoost", "Streamlit", "Python", "Scikit-learn"],
+    tags: ["#MachineLearning", "#Education", "#Prediction"],
+    githubUrl: "https://github.com/aryanmarshian",
+    featured: true
+  }, {
+    title: "FeedbackSense: Customer Sentiment Analyzer",
+    description: "Sentiment classification pipeline using NLTK for text preprocessing and Logistic Regression to analyze customer feedback with stemming, stopword removal, and TF-IDF vectorization.",
+    techStack: ["NLTK", "Logistic Regression", "Python", "TF-IDF"],
+    tags: ["#NLP", "#SentimentAnalysis", "#CustomerInsights"],
+    githubUrl: "https://github.com/aryanmarshian",
+    featured: true
+  }, {
+    title: "AI Email Sorting & Priority Highlighting",
+    description: "Automated email categorization & prioritization for GSuite inboxes using NLP models and UiPath-based RPA bots, reducing email processing time by 50%.",
+    techStack: ["UiPath", "NLP", "FastAPI", "GSuite"],
+    tags: ["#RPA", "#Automation", "#EmailProcessing"],
+    githubUrl: "https://github.com/aryanmarshian",
+    featured: false
+  }, {
+    title: "SpeakEase: AI Speech Therapy App",
+    description: "Application leveraging OpenAI's Whisper and Google's Gemini API to assist children with stuttering, tracking progress and providing personalized counselling support.",
+    techStack: ["OpenAI Whisper", "Gemini API", "Python", "React"],
+    tags: ["#AI", "#HealthTech", "#SpeechTherapy"],
+    githubUrl: "https://github.com/aryanmarshian",
+    featured: false
+  }, {
+    title: "Zen Zone: AI-Powered Mental Health Companion",
+    description: "Vite + React web app for student mental health and substance abuse support with MongoDB and Gemini AI integration. Completed in 24 hours, ranked top 5 in Wincibl hackathon.",
+    techStack: ["Vite", "React", "MongoDB", "Gemini AI"],
+    tags: ["#MentalHealth", "#AI", "#Hackathon"],
+    githubUrl: "https://github.com/aryanmarshian",
+    featured: false
+  }];
+  const experiences = [{
+    company: "VIT Chennai",
+    role: "Summer Research Intern Under Prof. Karthik R",
+    timeline: "May 2024 – July 2024",
+    contributions: ["Engineered an advanced plant leaf disease classification model, combining Vision Transformers (ViT) with custom CNN architecture using RSCA, Coordinate Attention, Condensation Attention, and CycleGAN techniques", "Achieved 88% accuracy (previous baseline: 82%) and co-authored a research paper on novel deep learning techniques for plant disease identification"]
+  }, {
+    company: "R Systems, Noida",
+    role: "AI Intern",
+    timeline: "Aug 2023 – Dec 2023",
+    contributions: ["Developed a SQL Query Generator leveraging OpenAI API & LangChain, enabling non-technical users to interact with SQL databases using natural language", "Designed and optimized AI-driven database automation workflows, improving query efficiency by 30%", "Conducted research on LLM-powered enterprise AI solutions, integrating OpenAI's GPT models for data-driven applications"]
+  }];
+  const education = [{
+    institution: "Vellore Institute of Technology, Chennai",
+    degree: "Bachelor of Technology in Computer Science specialization in Robotics and AI",
+    timeline: "2021 – 2025",
+    grade: "CGPA: 8.18"
+  }, {
+    institution: "Seth Anand Ram Jaipuria School, Ghaziabad",
+    degree: "Senior Secondary, Science",
+    timeline: "2015 – 2021",
+    grade: "86%"
+  }];
+  const research = [{
+    title: "Advanced Plant Leaf Disease Classification using Vision Transformers and Custom CNN",
+    publication: "Research Paper (In Progress) - VIT Chennai",
+    abstract: "Novel deep learning approach combining Vision Transformers with custom CNN architecture achieving 88% accuracy in plant disease identification."
+  }];
   const handleContactSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast({
       title: "Message sent!",
-      description: "Thank you for your message. I'll get back to you soon.",
+      description: "Thank you for your message. I'll get back to you soon."
     });
   };
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-800 via-gray-900 to-gray-800 text-gray-100 overflow-x-hidden">
+  return <div className="min-h-screen bg-gradient-to-br from-gray-800 via-gray-900 to-gray-800 text-gray-100 overflow-x-hidden">
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-gray-900/20 backdrop-blur-lg border-b border-gray-700/30">
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="text-lg font-bold"
-          >
+          <motion.div initial={{
+          opacity: 0,
+          x: -20
+        }} animate={{
+          opacity: 1,
+          x: 0
+        }} className="text-lg font-bold">
             aryan<span className="text-gray-400">singh</span>.
           </motion.div>
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-6 text-sm">
-            {['About', 'Projects', 'Experience', 'Education', 'Contact'].map((item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                className="hover:text-gray-400 transition-colors duration-200"
-              >
+            {['About', 'Projects', 'Experience', 'Education', 'Contact'].map(item => <a key={item} href={`#${item.toLowerCase()}`} className="hover:text-gray-400 transition-colors duration-200">
                 {item}
-              </a>
-            ))}
+              </a>)}
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            className="md:hidden"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
+          <button className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
             {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
 
         {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="md:hidden bg-gray-900/90 backdrop-blur-lg border-t border-gray-700/30"
-          >
+        {isMenuOpen && <motion.div initial={{
+        opacity: 0,
+        y: -20
+      }} animate={{
+        opacity: 1,
+        y: 0
+      }} className="md:hidden bg-gray-900/90 backdrop-blur-lg border-t border-gray-700/30">
             <div className="px-6 py-4 space-y-4 text-sm">
-              {['About', 'Projects', 'Experience', 'Education', 'Contact'].map((item) => (
-                <a
-                  key={item}
-                  href={`#${item.toLowerCase()}`}
-                  className="block hover:text-gray-400 transition-colors duration-200"
-                  onClick={() => setIsMenuOpen(false)}
-                >
+              {['About', 'Projects', 'Experience', 'Education', 'Contact'].map(item => <a key={item} href={`#${item.toLowerCase()}`} className="block hover:text-gray-400 transition-colors duration-200" onClick={() => setIsMenuOpen(false)}>
                   {item}
-                </a>
-              ))}
+                </a>)}
             </div>
-          </motion.div>
-        )}
+          </motion.div>}
       </nav>
 
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
-        <motion.div
-          style={{ y }}
-          className="absolute inset-0 bg-gradient-to-r from-gray-600/20 to-gray-500/20 rounded-full blur-3xl transform -translate-y-1/2"
-        />
+        <motion.div style={{
+        y
+      }} className="absolute inset-0 bg-gradient-to-r from-gray-600/20 to-gray-500/20 rounded-full blur-3xl transform -translate-y-1/2" />
         
         <div className="container mx-auto px-6 text-center relative z-10 max-w-4xl">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
+          <motion.div initial={{
+          opacity: 0,
+          y: 50
+        }} animate={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.8
+        }}>
             <h1 className="text-xl md:text-2xl text-gray-300 mb-3">Hello! I'm Aryan.</h1>
             <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
               Designing digital
@@ -208,9 +164,7 @@ const Index = () => {
               <br />
               on <span className="text-gray-400">visual intelligence</span>
             </h2>
-            <p className="text-lg md:text-xl text-gray-400 mb-6 max-w-2xl mx-auto">
-              Machine Learning Engineer | Computer Vision | AI Researcher
-            </p>
+            <p className="text-lg md:text-xl text-gray-400 mb-6 max-w-2xl mx-auto">Machine Learning | Computer Vision | Deep Learning</p>
             <p className="text-base text-gray-300 mb-8 max-w-xl mx-auto">
               I'm an enthusiastic AI/ML engineer passionate about building scalable intelligent systems, 
               solving real-world problems, and contributing to open-source.
@@ -239,13 +193,17 @@ const Index = () => {
       {/* About Section */}
       <section id="about" className="py-16 relative">
         <div className="container mx-auto px-6 max-w-5xl">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
+          <motion.div initial={{
+          opacity: 0,
+          y: 50
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.8
+        }} viewport={{
+          once: true
+        }} className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">About Me</h2>
             <p className="text-base text-gray-300 max-w-3xl mx-auto leading-relaxed">
               I'm a multidisciplinary AI engineer with expertise in computer vision, natural language processing, 
@@ -256,31 +214,35 @@ const Index = () => {
             </p>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3 mb-10"
-          >
-            {skills.map((skill, index) => (
-              <Badge
-                key={skill}
-                variant="outline"
-                className="text-center py-2 px-3 border-gray-600 hover:bg-gray-800 transition-colors duration-200 text-xs"
-              >
+          <motion.div initial={{
+          opacity: 0,
+          y: 50
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.8,
+          delay: 0.2
+        }} viewport={{
+          once: true
+        }} className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3 mb-10">
+            {skills.map((skill, index) => <Badge key={skill} variant="outline" className="text-center py-2 px-3 border-gray-600 hover:bg-gray-800 transition-colors duration-200 text-xs">
                 {skill}
-              </Badge>
-            ))}
+              </Badge>)}
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
-            className="text-center"
-          >
+          <motion.div initial={{
+          opacity: 0,
+          y: 50
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.8,
+          delay: 0.4
+        }} viewport={{
+          once: true
+        }} className="text-center">
             <Button className="bg-gray-600 hover:bg-gray-700 px-6 py-2 rounded-full text-sm">
               <Download className="mr-2" size={16} />
               Download Resume
@@ -292,13 +254,17 @@ const Index = () => {
       {/* Projects Section */}
       <section id="projects" className="py-16 relative">
         <div className="container mx-auto px-6 max-w-6xl">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
+          <motion.div initial={{
+          opacity: 0,
+          y: 50
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.8
+        }} viewport={{
+          once: true
+        }} className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Selected Works</h2>
             <p className="text-base text-gray-300 max-w-2xl mx-auto">
               A showcase of my recent projects in machine learning, computer vision, and AI research
@@ -306,38 +272,36 @@ const Index = () => {
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {projects.map((project, index) => (
-              <motion.div
-                key={project.title}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
+            {projects.map((project, index) => <motion.div key={project.title} initial={{
+            opacity: 0,
+            y: 50
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} transition={{
+            duration: 0.8,
+            delay: index * 0.1
+          }} viewport={{
+            once: true
+          }}>
                 <Card className="bg-gray-800/50 border-gray-700 hover:bg-gray-800/70 transition-all duration-300 group h-full">
                   <CardContent className="p-5">
-                    {project.featured && (
-                      <Badge className="mb-3 bg-gray-600 text-xs">Featured</Badge>
-                    )}
+                    {project.featured && <Badge className="mb-3 bg-gray-600 text-xs">Featured</Badge>}
                     <h3 className="text-lg font-bold mb-2 group-hover:text-gray-400 transition-colors">
                       {project.title}
                     </h3>
                     <p className="text-gray-300 mb-3 text-sm leading-relaxed">{project.description}</p>
                     
                     <div className="flex flex-wrap gap-1 mb-3">
-                      {project.techStack.map((tech) => (
-                        <Badge key={tech} variant="outline" className="text-xs border-gray-600 px-2 py-1">
+                      {project.techStack.map(tech => <Badge key={tech} variant="outline" className="text-xs border-gray-600 px-2 py-1">
                           {tech}
-                        </Badge>
-                      ))}
+                        </Badge>)}
                     </div>
 
                     <div className="flex flex-wrap gap-2 mb-3">
-                      {project.tags.map((tag) => (
-                        <span key={tag} className="text-gray-400 text-xs">
+                      {project.tags.map(tag => <span key={tag} className="text-gray-400 text-xs">
                           {tag}
-                        </span>
-                      ))}
+                        </span>)}
                     </div>
 
                     <div className="flex justify-between items-center">
@@ -349,8 +313,7 @@ const Index = () => {
                     </div>
                   </CardContent>
                 </Card>
-              </motion.div>
-            ))}
+              </motion.div>)}
           </div>
         </div>
       </section>
@@ -358,26 +321,33 @@ const Index = () => {
       {/* Experience Section */}
       <section id="experience" className="py-16 relative">
         <div className="container mx-auto px-6 max-w-4xl">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
+          <motion.div initial={{
+          opacity: 0,
+          y: 50
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.8
+        }} viewport={{
+          once: true
+        }} className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Experience</h2>
           </motion.div>
 
           <div className="max-w-3xl mx-auto">
-            {experiences.map((exp, index) => (
-              <motion.div
-                key={exp.company}
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                className="relative pl-6 pb-10 border-l border-gray-600 last:border-l-0"
-              >
+            {experiences.map((exp, index) => <motion.div key={exp.company} initial={{
+            opacity: 0,
+            x: -50
+          }} whileInView={{
+            opacity: 1,
+            x: 0
+          }} transition={{
+            duration: 0.8,
+            delay: index * 0.2
+          }} viewport={{
+            once: true
+          }} className="relative pl-6 pb-10 border-l border-gray-600 last:border-l-0">
                 <div className="absolute w-3 h-3 bg-gray-600 rounded-full -left-1.5 top-0"></div>
                 <div className="bg-gray-800/50 p-5 rounded-lg border border-gray-700">
                   <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-3">
@@ -388,16 +358,13 @@ const Index = () => {
                     <span className="text-gray-400 mt-1 md:mt-0 text-sm">{exp.timeline}</span>
                   </div>
                   <ul className="space-y-1">
-                    {exp.contributions.map((contribution, idx) => (
-                      <li key={idx} className="text-gray-300 flex items-start text-sm">
+                    {exp.contributions.map((contribution, idx) => <li key={idx} className="text-gray-300 flex items-start text-sm">
                         <span className="text-gray-400 mr-2">•</span>
                         {contribution}
-                      </li>
-                    ))}
+                      </li>)}
                   </ul>
                 </div>
-              </motion.div>
-            ))}
+              </motion.div>)}
           </div>
         </div>
       </section>
@@ -405,25 +372,33 @@ const Index = () => {
       {/* Education Section */}
       <section id="education" className="py-16 relative">
         <div className="container mx-auto px-6 max-w-4xl">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
+          <motion.div initial={{
+          opacity: 0,
+          y: 50
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.8
+        }} viewport={{
+          once: true
+        }} className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Education</h2>
           </motion.div>
 
           <div className="max-w-3xl mx-auto grid gap-6">
-            {education.map((edu, index) => (
-              <motion.div
-                key={edu.institution}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
-                viewport={{ once: true }}
-              >
+            {education.map((edu, index) => <motion.div key={edu.institution} initial={{
+            opacity: 0,
+            y: 50
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} transition={{
+            duration: 0.8,
+            delay: index * 0.2
+          }} viewport={{
+            once: true
+          }}>
                 <Card className="bg-gray-800/50 border-gray-700 hover:bg-gray-800/70 transition-all duration-300">
                   <CardContent className="p-5">
                     <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
@@ -438,8 +413,7 @@ const Index = () => {
                     </div>
                   </CardContent>
                 </Card>
-              </motion.div>
-            ))}
+              </motion.div>)}
           </div>
         </div>
       </section>
@@ -447,25 +421,33 @@ const Index = () => {
       {/* Research Section */}
       <section id="research" className="py-16 relative">
         <div className="container mx-auto px-6 max-w-4xl">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
+          <motion.div initial={{
+          opacity: 0,
+          y: 50
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.8
+        }} viewport={{
+          once: true
+        }} className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Research & Publications</h2>
           </motion.div>
 
           <div className="max-w-3xl mx-auto grid gap-6">
-            {research.map((paper, index) => (
-              <motion.div
-                key={paper.title}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
-                viewport={{ once: true }}
-              >
+            {research.map((paper, index) => <motion.div key={paper.title} initial={{
+            opacity: 0,
+            y: 50
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} transition={{
+            duration: 0.8,
+            delay: index * 0.2
+          }} viewport={{
+            once: true
+          }}>
                 <Card className="bg-gray-800/50 border-gray-700 hover:bg-gray-800/70 transition-all duration-300">
                   <CardContent className="p-5">
                     <h3 className="text-lg font-bold mb-2 text-gray-400">{paper.title}</h3>
@@ -473,8 +455,7 @@ const Index = () => {
                     <p className="text-gray-400 text-sm">{paper.abstract}</p>
                   </CardContent>
                 </Card>
-              </motion.div>
-            ))}
+              </motion.div>)}
           </div>
         </div>
       </section>
@@ -482,55 +463,51 @@ const Index = () => {
       {/* Contact Section */}
       <section id="contact" className="py-16 relative">
         <div className="container mx-auto px-6 max-w-4xl">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
+          <motion.div initial={{
+          opacity: 0,
+          y: 50
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.8
+        }} viewport={{
+          once: true
+        }} className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Let's Talk</h2>
             <p className="text-base text-gray-300 max-w-xl mx-auto">
               Interested in collaborating or have a project in mind? I'd love to hear from you.
             </p>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="max-w-xl mx-auto"
-          >
+          <motion.div initial={{
+          opacity: 0,
+          y: 50
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.8,
+          delay: 0.2
+        }} viewport={{
+          once: true
+        }} className="max-w-xl mx-auto">
             <Card className="bg-gray-800/50 border-gray-700">
               <CardContent className="p-6">
                 <form onSubmit={handleContactSubmit} className="space-y-4">
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium mb-1">Name</label>
-                      <Input 
-                        className="bg-gray-700 border-gray-600 text-white text-sm"
-                        placeholder="Your name"
-                        required
-                      />
+                      <Input className="bg-gray-700 border-gray-600 text-white text-sm" placeholder="Your name" required />
                     </div>
                     <div>
                       <label className="block text-sm font-medium mb-1">Email</label>
-                      <Input 
-                        type="email"
-                        className="bg-gray-700 border-gray-600 text-white text-sm"
-                        placeholder="your.email@example.com"
-                        required
-                      />
+                      <Input type="email" className="bg-gray-700 border-gray-600 text-white text-sm" placeholder="your.email@example.com" required />
                     </div>
                   </div>
                   <div>
                     <label className="block text-sm font-medium mb-1">Message</label>
-                    <Textarea 
-                      className="bg-gray-700 border-gray-600 text-white min-h-[100px] text-sm"
-                      placeholder="Tell me about your project or just say hi!"
-                      required
-                    />
+                    <Textarea className="bg-gray-700 border-gray-600 text-white min-h-[100px] text-sm" placeholder="Tell me about your project or just say hi!" required />
                   </div>
                   <Button type="submit" className="w-full bg-gray-600 hover:bg-gray-700 text-sm">
                     Send Message
@@ -540,13 +517,18 @@ const Index = () => {
             </Card>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
-            className="text-center mt-10"
-          >
+          <motion.div initial={{
+          opacity: 0,
+          y: 50
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.8,
+          delay: 0.4
+        }} viewport={{
+          once: true
+        }} className="text-center mt-10">
             <p className="text-gray-300 mb-4 text-sm">Or connect with me directly:</p>
             <div className="flex justify-center space-x-4">
               <a href="https://github.com/aryanmarshian" className="text-gray-400 hover:text-white transition-colors">
@@ -569,8 +551,6 @@ const Index = () => {
           <p className="text-sm">&copy; 2024 Aryan Singh. Built with React & Tailwind CSS.</p>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
