@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowRight, Github, Linkedin, Mail, Download, ExternalLink, Menu, X } from 'lucide-react';
+import { ArrowRight, Github, Linkedin, Mail, Download, ExternalLink, Menu, X, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -467,9 +467,9 @@ const Index = () => {
         }} viewport={{
           once: true
         }} className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Let's Talk</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Get in Touch</h2>
             <p className="text-base text-gray-300 max-w-xl mx-auto">
-              Interested in collaborating or have a project in mind? I'd love to hear from you.
+              Ready to collaborate or discuss opportunities? Feel free to reach out through any of the channels below.
             </p>
           </motion.div>
 
@@ -486,26 +486,44 @@ const Index = () => {
           once: true
         }} className="max-w-xl mx-auto">
             <Card className="bg-gray-800/50 border-gray-700">
-              <CardContent className="p-6">
-                <form onSubmit={handleContactSubmit} className="space-y-4">
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-sm font-medium mb-1">Name</label>
-                      <Input className="bg-gray-700 border-gray-600 text-white text-sm" placeholder="Your name" required />
+              <CardContent className="p-8">
+                <div className="space-y-6">
+                  <div className="flex items-center space-x-4">
+                    <div className="bg-gray-700 p-3 rounded-full">
+                      <Mail size={20} className="text-gray-300" />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium mb-1">Email</label>
-                      <Input type="email" className="bg-gray-700 border-gray-600 text-white text-sm" placeholder="your.email@example.com" required />
+                      <h3 className="font-medium text-gray-200">Email</h3>
+                      <a href="mailto:aryansingh9503@gmail.com" className="text-gray-400 hover:text-gray-300 transition-colors">
+                        aryansingh9503@gmail.com
+                      </a>
                     </div>
                   </div>
-                  <div>
-                    <label className="block text-sm font-medium mb-1">Message</label>
-                    <Textarea className="bg-gray-700 border-gray-600 text-white min-h-[100px] text-sm" placeholder="Tell me about your project or just say hi!" required />
+
+                  <div className="flex items-center space-x-4">
+                    <div className="bg-gray-700 p-3 rounded-full">
+                      <Phone size={20} className="text-gray-300" />
+                    </div>
+                    <div>
+                      <h3 className="font-medium text-gray-200">Phone</h3>
+                      <a href="tel:+917428716989" className="text-gray-400 hover:text-gray-300 transition-colors">
+                        +91 7428716989
+                      </a>
+                    </div>
                   </div>
-                  <Button type="submit" className="w-full bg-gray-600 hover:bg-gray-700 text-sm">
-                    Send Message
-                  </Button>
-                </form>
+
+                  <div className="flex items-center space-x-4">
+                    <div className="bg-gray-700 p-3 rounded-full">
+                      <Linkedin size={20} className="text-gray-300" />
+                    </div>
+                    <div>
+                      <h3 className="font-medium text-gray-200">LinkedIn</h3>
+                      <a href="#" className="text-gray-400 hover:text-gray-300 transition-colors">
+                        Connect with me on LinkedIn
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </CardContent>
             </Card>
           </motion.div>
@@ -522,15 +540,14 @@ const Index = () => {
         }} viewport={{
           once: true
         }} className="text-center mt-10">
-            <p className="text-gray-300 mb-4 text-sm">Or connect with me directly:</p>
             <div className="flex justify-center space-x-4">
               <a href="https://github.com/aryanmarshian" className="text-gray-400 hover:text-white transition-colors">
                 <Github size={20} />
               </a>
-              <a href="mailto:aryan@example.com" className="text-gray-400 hover:text-white transition-colors">
+              <a href="mailto:aryansingh9503@gmail.com" className="text-gray-400 hover:text-white transition-colors">
                 <Mail size={20} />
               </a>
-              <a href="https://linkedin.com/in/aryansingh" className="text-gray-400 hover:text-white transition-colors">
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">
                 <Linkedin size={20} />
               </a>
             </div>
