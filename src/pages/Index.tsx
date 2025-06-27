@@ -23,7 +23,7 @@ const Index = () => {
       description: "Real-time drone detection system integrating YOLOv8 for fast object detection and Vision Transformers for precise validation with parallel processing and decision fusion.",
       techStack: ["YOLOv8", "Vision Transformers", "Streamlit", "MongoDB"],
       tags: ["#ComputerVision", "#ObjectDetection", "#RealTime"],
-      githubUrl: "https://github.com/aryanmarshian/drone-detection-system",
+      githubUrl: "https://github.com/aryanmarshian/Real-Time-Drone-Detection-System",
       featured: true
     },
     {
@@ -31,7 +31,7 @@ const Index = () => {
       description: "Machine learning model using XGBoost to predict student dropout risk based on academic and demographic data with class imbalance handling and real-time assessment.",
       techStack: ["XGBoost", "Streamlit", "Python", "Scikit-learn"],
       tags: ["#MachineLearning", "#Education", "#Prediction"],
-      githubUrl: "https://github.com/aryanmarshian/student-dropout-predictor",
+      githubUrl: "https://github.com/aryanmarshian/Student-Dropout-Risk-Predictor",
       featured: true
     },
     {
@@ -39,7 +39,7 @@ const Index = () => {
       description: "Sentiment classification pipeline using NLTK for text preprocessing and Logistic Regression to analyze customer feedback with stemming, stopword removal, and TF-IDF vectorization.",
       techStack: ["NLTK", "Logistic Regression", "Python", "TF-IDF"],
       tags: ["#NLP", "#SentimentAnalysis", "#CustomerInsights"],
-      githubUrl: "https://github.com/aryanmarshian/feedbacksense",
+      githubUrl: "https://github.com/aryanmarshian/FeedbackSense",
       featured: true
     },
     {
@@ -47,7 +47,7 @@ const Index = () => {
       description: "Automated email categorization & prioritization for GSuite inboxes using NLP models and UiPath-based RPA bots, reducing email processing time by 50%.",
       techStack: ["UiPath", "NLP", "FastAPI", "GSuite"],
       tags: ["#RPA", "#Automation", "#EmailProcessing"],
-      githubUrl: "https://github.com/aryanmarshian/ai-email-sorter",
+      githubUrl: "https://github.com/aryanmarshian/AI-Email-Sorting",
       featured: false
     },
     {
@@ -55,7 +55,7 @@ const Index = () => {
       description: "Application leveraging OpenAI's Whisper and Google's Gemini API to assist children with stuttering, tracking progress and providing personalized counselling support.",
       techStack: ["OpenAI Whisper", "Gemini API", "Python", "React"],
       tags: ["#AI", "#HealthTech", "#SpeechTherapy"],
-      githubUrl: "https://github.com/aryanmarshian/speakease",
+      githubUrl: "https://github.com/aryanmarshian/SpeakEase",
       featured: false
     },
     {
@@ -63,7 +63,7 @@ const Index = () => {
       description: "Vite + React web app for student mental health and substance abuse support with MongoDB and Gemini AI integration. Completed in 24 hours, ranked top 5 in Wincibl hackathon.",
       techStack: ["Vite", "React", "MongoDB", "Gemini AI"],
       tags: ["#MentalHealth", "#AI", "#Hackathon"],
-      githubUrl: "https://github.com/aryanmarshian/zen-zone",
+      githubUrl: "https://github.com/aryanmarshian/Zen-Zone",
       featured: false
     }
   ];
