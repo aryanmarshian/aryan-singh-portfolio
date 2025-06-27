@@ -10,57 +10,63 @@ import { useToast } from '@/hooks/use-toast';
 
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const {
-    scrollYProgress
-  } = useScroll();
+  const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
-  const {
-    toast
-  } = useToast();
+  const { toast } = useToast();
+
+  const resumeUrl = "https://drive.google.com/file/d/1zLr2PeUR6g0Q_pVst-l0a79G9SaL_Noy/view?usp=drive_link";
+
   const skills = ['Python', 'JavaScript', 'React', 'Node.js', 'FastAPI', 'OpenAI', 'LangChain', 'UIPath', 'Streamlit', 'Hugging Face', 'AWS SageMaker', 'Docker', 'Kubernetes', 'MongoDB Atlas', 'MySQL', 'MongoDB', 'BERT', 'GPT', 'CNNs', 'YOLO', 'Vision Transformers', 'OpenCV', 'Tesseract'];
-  const projects = [{
-    title: "Real-Time Drone Detection System",
-    description: "Real-time drone detection system integrating YOLOv8 for fast object detection and Vision Transformers for precise validation with parallel processing and decision fusion.",
-    techStack: ["YOLOv8", "Vision Transformers", "Streamlit", "MongoDB"],
-    tags: ["#ComputerVision", "#ObjectDetection", "#RealTime"],
-    githubUrl: "https://github.com/aryanmarshian",
-    featured: true
-  }, {
-    title: "Student Dropout Risk Predictor",
-    description: "Machine learning model using XGBoost to predict student dropout risk based on academic and demographic data with class imbalance handling and real-time assessment.",
-    techStack: ["XGBoost", "Streamlit", "Python", "Scikit-learn"],
-    tags: ["#MachineLearning", "#Education", "#Prediction"],
-    githubUrl: "https://github.com/aryanmarshian",
-    featured: true
-  }, {
-    title: "FeedbackSense: Customer Sentiment Analyzer",
-    description: "Sentiment classification pipeline using NLTK for text preprocessing and Logistic Regression to analyze customer feedback with stemming, stopword removal, and TF-IDF vectorization.",
-    techStack: ["NLTK", "Logistic Regression", "Python", "TF-IDF"],
-    tags: ["#NLP", "#SentimentAnalysis", "#CustomerInsights"],
-    githubUrl: "https://github.com/aryanmarshian",
-    featured: true
-  }, {
-    title: "AI Email Sorting & Priority Highlighting",
-    description: "Automated email categorization & prioritization for GSuite inboxes using NLP models and UiPath-based RPA bots, reducing email processing time by 50%.",
-    techStack: ["UiPath", "NLP", "FastAPI", "GSuite"],
-    tags: ["#RPA", "#Automation", "#EmailProcessing"],
-    githubUrl: "https://github.com/aryanmarshian",
-    featured: false
-  }, {
-    title: "SpeakEase: AI Speech Therapy App",
-    description: "Application leveraging OpenAI's Whisper and Google's Gemini API to assist children with stuttering, tracking progress and providing personalized counselling support.",
-    techStack: ["OpenAI Whisper", "Gemini API", "Python", "React"],
-    tags: ["#AI", "#HealthTech", "#SpeechTherapy"],
-    githubUrl: "https://github.com/aryanmarshian",
-    featured: false
-  }, {
-    title: "Zen Zone: AI-Powered Mental Health Companion",
-    description: "Vite + React web app for student mental health and substance abuse support with MongoDB and Gemini AI integration. Completed in 24 hours, ranked top 5 in Wincibl hackathon.",
-    techStack: ["Vite", "React", "MongoDB", "Gemini AI"],
-    tags: ["#MentalHealth", "#AI", "#Hackathon"],
-    githubUrl: "https://github.com/aryanmarshian",
-    featured: false
-  }];
+  const projects = [
+    {
+      title: "Real-Time Drone Detection System",
+      description: "Real-time drone detection system integrating YOLOv8 for fast object detection and Vision Transformers for precise validation with parallel processing and decision fusion.",
+      techStack: ["YOLOv8", "Vision Transformers", "Streamlit", "MongoDB"],
+      tags: ["#ComputerVision", "#ObjectDetection", "#RealTime"],
+      githubUrl: "https://github.com/aryanmarshian/drone-detection-system",
+      featured: true
+    },
+    {
+      title: "Student Dropout Risk Predictor",
+      description: "Machine learning model using XGBoost to predict student dropout risk based on academic and demographic data with class imbalance handling and real-time assessment.",
+      techStack: ["XGBoost", "Streamlit", "Python", "Scikit-learn"],
+      tags: ["#MachineLearning", "#Education", "#Prediction"],
+      githubUrl: "https://github.com/aryanmarshian/student-dropout-predictor",
+      featured: true
+    },
+    {
+      title: "FeedbackSense: Customer Sentiment Analyzer",
+      description: "Sentiment classification pipeline using NLTK for text preprocessing and Logistic Regression to analyze customer feedback with stemming, stopword removal, and TF-IDF vectorization.",
+      techStack: ["NLTK", "Logistic Regression", "Python", "TF-IDF"],
+      tags: ["#NLP", "#SentimentAnalysis", "#CustomerInsights"],
+      githubUrl: "https://github.com/aryanmarshian/feedbacksense",
+      featured: true
+    },
+    {
+      title: "AI Email Sorting & Priority Highlighting",
+      description: "Automated email categorization & prioritization for GSuite inboxes using NLP models and UiPath-based RPA bots, reducing email processing time by 50%.",
+      techStack: ["UiPath", "NLP", "FastAPI", "GSuite"],
+      tags: ["#RPA", "#Automation", "#EmailProcessing"],
+      githubUrl: "https://github.com/aryanmarshian/ai-email-sorter",
+      featured: false
+    },
+    {
+      title: "SpeakEase: AI Speech Therapy App",
+      description: "Application leveraging OpenAI's Whisper and Google's Gemini API to assist children with stuttering, tracking progress and providing personalized counselling support.",
+      techStack: ["OpenAI Whisper", "Gemini API", "Python", "React"],
+      tags: ["#AI", "#HealthTech", "#SpeechTherapy"],
+      githubUrl: "https://github.com/aryanmarshian/speakease",
+      featured: false
+    },
+    {
+      title: "Zen Zone: AI-Powered Mental Health Companion",
+      description: "Vite + React web app for student mental health and substance abuse support with MongoDB and Gemini AI integration. Completed in 24 hours, ranked top 5 in Wincibl hackathon.",
+      techStack: ["Vite", "React", "MongoDB", "Gemini AI"],
+      tags: ["#MentalHealth", "#AI", "#Hackathon"],
+      githubUrl: "https://github.com/aryanmarshian/zen-zone",
+      featured: false
+    }
+  ];
   const experiences = [{
     company: "VIT Chennai",
     role: "Summer Research Intern Under Prof. Karthik R",
@@ -162,7 +168,10 @@ const Index = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
-              <Button className="bg-gray-200 text-gray-900 hover:bg-gray-300 px-6 py-2 rounded-full text-base font-medium">
+              <Button 
+                className="bg-gray-200 text-gray-900 hover:bg-gray-300 px-6 py-2 rounded-full text-base font-medium"
+                onClick={() => window.open(resumeUrl, '_blank')}
+              >
                 View Resume <ArrowRight className="ml-2" size={18} />
               </Button>
               <div className="flex gap-3">
@@ -234,7 +243,10 @@ const Index = () => {
         }} viewport={{
           once: true
         }} className="text-center">
-            <Button className="bg-gray-600 hover:bg-gray-700 px-6 py-2 rounded-full text-sm">
+            <Button 
+              className="bg-gray-600 hover:bg-gray-700 px-6 py-2 rounded-full text-sm"
+              onClick={() => window.open(resumeUrl, '_blank')}
+            >
               <Download className="mr-2" size={16} />
               Download Resume
             </Button>
@@ -263,7 +275,8 @@ const Index = () => {
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {projects.map((project, index) => <motion.div key={project.title} initial={{
+            {projects.map((project, index) => (
+              <motion.div key={project.title} initial={{
             opacity: 0,
             y: 50
           }} whileInView={{
@@ -296,7 +309,12 @@ const Index = () => {
                     </div>
 
                     <div className="flex justify-between items-center">
-                      <Button variant="outline" size="sm" className="border-gray-600 hover:bg-gray-700 text-xs">
+                      <Button 
+                        variant="outline" 
+                        size="sm" 
+                        className="border-gray-600 hover:bg-gray-700 text-xs"
+                        onClick={() => window.open(project.githubUrl, '_blank')}
+                      >
                         <Github className="mr-1" size={14} />
                         GitHub
                       </Button>
@@ -304,7 +322,8 @@ const Index = () => {
                     </div>
                   </CardContent>
                 </Card>
-              </motion.div>)}
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
