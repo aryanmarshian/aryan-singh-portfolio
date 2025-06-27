@@ -145,48 +145,108 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      <section className="min-h-screen flex items-center relative overflow-hidden">
         <motion.div
           style={{ y }}
-          className="absolute inset-0 bg-gradient-to-r from-gray-600/20 to-gray-500/20 rounded-full blur-3xl transform -translate-y-1/2"
+          className="absolute right-0 top-1/2 w-96 h-96 bg-gradient-to-r from-gray-600/20 to-gray-500/20 rounded-full blur-3xl transform -translate-y-1/2"
         />
         
-        <div className="container mx-auto px-6 text-center relative z-10 max-w-4xl">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h1 className="text-xl md:text-2xl text-gray-300 mb-3">Hello! I'm Aryan.</h1>
-            <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight bg-gradient-to-r from-gray-200 via-gray-400 to-gray-600 bg-clip-text text-transparent">
-              Specializing in machine learning solutions driven by visual intelligence and real-world impact.
-            </h2>
-            <p className="text-lg md:text-xl text-gray-400 mb-6 max-w-2xl mx-auto">Machine Learning | Computer Vision | Deep Learning</p>
-            <p className="text-base text-gray-300 mb-8 max-w-xl mx-auto">
-              I'm an enthusiastic AI/ML engineer passionate about building scalable intelligent systems, 
-              solving real-world problems, and contributing to open-source.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
-              <Button 
-                className="bg-gray-200 text-gray-900 hover:bg-gray-300 px-6 py-2 rounded-full text-base font-medium"
-                onClick={() => window.open(resumeUrl, '_blank')}
-              >
-                View Resume <ArrowRight className="ml-2" size={18} />
-              </Button>
-              <div className="flex gap-3">
-                <Button variant="outline" size="icon" className="rounded-full border-gray-600 hover:bg-gray-800 w-10 h-10">
-                  <Github size={18} />
-                </Button>
-                <Button variant="outline" size="icon" className="rounded-full border-gray-600 hover:bg-gray-800 w-10 h-10">
-                  <Linkedin size={18} />
-                </Button>
-                <Button variant="outline" size="icon" className="rounded-full border-gray-600 hover:bg-gray-800 w-10 h-10">
-                  <Mail size={18} />
-                </Button>
+        <div className="container mx-auto px-6 relative z-10 max-w-6xl">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="space-y-6"
+            >
+              <div className="space-y-2">
+                <h1 className="text-lg md:text-xl text-gray-300">Hello! I'm Aryan.</h1>
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                  Specializing in{' '}
+                  <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-blue-600 bg-clip-text text-transparent">
+                    machine learning
+                  </span>{' '}
+                  solutions driven by{' '}
+                  <span className="bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent">
+                    visual intelligence
+                  </span>{' '}
+                  and real-world impact.
+                </h2>
               </div>
-            </div>
-          </motion.div>
+              
+              <div className="flex flex-wrap gap-3 text-sm">
+                <Badge className="bg-blue-500/20 text-blue-300 border-blue-500/30 px-3 py-1">
+                  Machine Learning
+                </Badge>
+                <Badge className="bg-purple-500/20 text-purple-300 border-purple-500/30 px-3 py-1">
+                  Computer Vision
+                </Badge>
+                <Badge className="bg-green-500/20 text-green-300 border-green-500/30 px-3 py-1">
+                  Deep Learning
+                </Badge>
+              </div>
+
+              <p className="text-lg text-gray-300 max-w-xl leading-relaxed">
+                I'm an enthusiastic <span className="text-white font-semibold">AI/ML engineer</span> passionate about building{' '}
+                <span className="text-white font-semibold">scalable intelligent systems</span>, solving real-world problems, 
+                and contributing to <span className="text-white font-semibold">open-source</span>.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                <Button 
+                  className="bg-white text-gray-900 hover:bg-gray-200 px-8 py-3 rounded-full text-base font-medium shadow-lg hover:shadow-xl transition-all duration-300"
+                  onClick={() => window.open(resumeUrl, '_blank')}
+                >
+                  View Resume <ArrowRight className="ml-2" size={20} />
+                </Button>
+                <div className="flex gap-3">
+                  <Button 
+                    variant="outline" 
+                    size="icon" 
+                    className="rounded-full border-gray-600 hover:bg-gray-800 hover:border-gray-500 w-12 h-12 transition-all duration-300"
+                    onClick={() => window.open('https://github.com/aryanmarshian', '_blank')}
+                  >
+                    <Github size={20} />
+                  </Button>
+                  <Button 
+                    variant="outline" 
+                    size="icon" 
+                    className="rounded-full border-gray-600 hover:bg-gray-800 hover:border-gray-500 w-12 h-12 transition-all duration-300"
+                  >
+                    <Linkedin size={20} />
+                  </Button>
+                  <Button 
+                    variant="outline" 
+                    size="icon" 
+                    className="rounded-full border-gray-600 hover:bg-gray-800 hover:border-gray-500 w-12 h-12 transition-all duration-300"
+                    onClick={() => window.open('mailto:aryansingh9503@gmail.com', '_blank')}
+                  >
+                    <Mail size={20} />
+                  </Button>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Right Visual Element */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="hidden lg:flex justify-center items-center"
+            >
+              <div className="relative">
+                <div className="w-80 h-80 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-xl"></div>
+                <div className="absolute inset-0 w-80 h-80 bg-gradient-to-l from-green-500/20 to-blue-500/20 rounded-full blur-xl animate-pulse"></div>
+                <div className="absolute inset-8 bg-gray-800/50 backdrop-blur-sm rounded-full border border-gray-700/50 flex items-center justify-center">
+                  <div className="text-center space-y-2">
+                    <div className="text-2xl font-bold text-gray-200">AI/ML</div>
+                    <div className="text-sm text-gray-400">Engineer</div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
