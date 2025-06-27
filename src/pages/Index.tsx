@@ -101,9 +101,9 @@ const Index = () => {
       description: "Thank you for your message. I'll get back to you soon."
     });
   };
-  return <div className="min-h-screen bg-gradient-to-br from-gray-800 via-gray-900 to-gray-800 text-gray-100 overflow-x-hidden">
+  return <div className="min-h-screen bg-gray-50 text-gray-900 overflow-x-hidden">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-gray-900/20 backdrop-blur-lg border-b border-gray-700/30">
+      <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-lg border-b border-gray-200">
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">
           <motion.div initial={{
           opacity: 0,
@@ -111,15 +111,25 @@ const Index = () => {
         }} animate={{
           opacity: 1,
           x: 0
-        }} className="text-lg font-bold">
+        }} className="text-lg font-bold text-black">
             aryan<span className="text-gray-400">singh</span>.
           </motion.div>
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-6 text-sm">
-            {['About', 'Projects', 'Experience', 'Education', 'Contact'].map(item => <a key={item} href={`#${item.toLowerCase()}`} className="hover:text-gray-400 transition-colors duration-200">
+            {['About', 'Projects', 'Experience', 'Education', 'Contact'].map(item => <a key={item} href={`#${item.toLowerCase()}`} className="text-gray-600 hover:text-black transition-colors duration-200">
                 {item}
               </a>)}
+          </div>
+
+          {/* CTA Button */}
+          <div className="hidden md:flex">
+            <Button 
+              className="bg-black text-white hover:bg-gray-800 px-6 py-2 rounded-full text-sm"
+              onClick={() => window.open('mailto:aryansingh9503@gmail.com', '_blank')}
+            >
+              Let's Talk <ArrowRight className="ml-2" size={16} />
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -135,9 +145,9 @@ const Index = () => {
       }} animate={{
         opacity: 1,
         y: 0
-      }} className="md:hidden bg-gray-900/90 backdrop-blur-lg border-t border-gray-700/30">
+      }} className="md:hidden bg-white/90 backdrop-blur-lg border-t border-gray-200">
             <div className="px-6 py-4 space-y-4 text-sm">
-              {['About', 'Projects', 'Experience', 'Education', 'Contact'].map(item => <a key={item} href={`#${item.toLowerCase()}`} className="block hover:text-gray-400 transition-colors duration-200" onClick={() => setIsMenuOpen(false)}>
+              {['About', 'Projects', 'Experience', 'Education', 'Contact'].map(item => <a key={item} href={`#${item.toLowerCase()}`} className="block text-gray-600 hover:text-black transition-colors duration-200" onClick={() => setIsMenuOpen(false)}>
                   {item}
                 </a>)}
             </div>
@@ -145,105 +155,47 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center relative overflow-hidden">
-        <motion.div
-          style={{ y }}
-          className="absolute right-0 top-1/2 w-96 h-96 bg-gradient-to-r from-gray-600/20 to-gray-500/20 rounded-full blur-3xl transform -translate-y-1/2"
-        />
-        
+      <section className="min-h-screen flex items-center relative overflow-hidden bg-gray-50">        
         <div className="container mx-auto px-6 relative z-10 max-w-6xl">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left Content */}
+          <div className="max-w-4xl">
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="space-y-6"
+              className="space-y-8"
             >
               <div className="space-y-2">
-                <h1 className="text-lg md:text-xl text-gray-300">Hello! I'm Aryan.</h1>
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                <h1 className="text-lg md:text-xl text-gray-600 font-normal">Hello! I'm Aryan.</h1>
+                <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] text-black">
                   Specializing in{' '}
-                  <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-blue-600 bg-clip-text text-transparent">
+                  <span className="text-black">
                     machine learning
-                  </span>{' '}
+                  </span>
+                  <br />
                   solutions driven by{' '}
-                  <span className="bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent">
+                  <br />
+                  emphasis on{' '}
+                  <span className="text-gray-400">
                     visual intelligence
-                  </span>{' '}
-                  and real-world impact.
+                  </span>
                 </h2>
               </div>
               
-              <div className="flex flex-wrap gap-3 text-sm">
-                <Badge className="bg-blue-500/20 text-blue-300 border-blue-500/30 px-3 py-1">
-                  Machine Learning
-                </Badge>
-                <Badge className="bg-purple-500/20 text-purple-300 border-purple-500/30 px-3 py-1">
-                  Computer Vision
-                </Badge>
-                <Badge className="bg-green-500/20 text-green-300 border-green-500/30 px-3 py-1">
-                  Deep Learning
-                </Badge>
+              <div className="max-w-2xl">
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  A multidisciplinary AI engineer passionate about building scalable intelligent systems, 
+                  solving real-world problems through machine learning and computer vision to achieve 
+                  impactful solutions.
+                </p>
               </div>
 
-              <p className="text-lg text-gray-300 max-w-xl leading-relaxed">
-                I'm an enthusiastic <span className="text-white font-semibold">AI/ML engineer</span> passionate about building{' '}
-                <span className="text-white font-semibold">scalable intelligent systems</span>, solving real-world problems, 
-                and contributing to <span className="text-white font-semibold">open-source</span>.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <div className="pt-4">
                 <Button 
-                  className="bg-white text-gray-900 hover:bg-gray-200 px-8 py-3 rounded-full text-base font-medium shadow-lg hover:shadow-xl transition-all duration-300"
-                  onClick={() => window.open(resumeUrl, '_blank')}
+                  className="bg-black text-white hover:bg-gray-800 px-8 py-3 rounded-full text-base font-medium"
+                  onClick={() => window.open('mailto:aryansingh9503@gmail.com', '_blank')}
                 >
-                  View Resume <ArrowRight className="ml-2" size={20} />
+                  Let's Talk <ArrowRight className="ml-2" size={20} />
                 </Button>
-                <div className="flex gap-3">
-                  <Button 
-                    variant="outline" 
-                    size="icon" 
-                    className="rounded-full border-gray-600 hover:bg-gray-800 hover:border-gray-500 w-12 h-12 transition-all duration-300"
-                    onClick={() => window.open('https://github.com/aryanmarshian', '_blank')}
-                  >
-                    <Github size={20} />
-                  </Button>
-                  <Button 
-                    variant="outline" 
-                    size="icon" 
-                    className="rounded-full border-gray-600 hover:bg-gray-800 hover:border-gray-500 w-12 h-12 transition-all duration-300"
-                  >
-                    <Linkedin size={20} />
-                  </Button>
-                  <Button 
-                    variant="outline" 
-                    size="icon" 
-                    className="rounded-full border-gray-600 hover:bg-gray-800 hover:border-gray-500 w-12 h-12 transition-all duration-300"
-                    onClick={() => window.open('mailto:aryansingh9503@gmail.com', '_blank')}
-                  >
-                    <Mail size={20} />
-                  </Button>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Right Visual Element */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="hidden lg:flex justify-center items-center"
-            >
-              <div className="relative">
-                <div className="w-80 h-80 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-xl"></div>
-                <div className="absolute inset-0 w-80 h-80 bg-gradient-to-l from-green-500/20 to-blue-500/20 rounded-full blur-xl animate-pulse"></div>
-                <div className="absolute inset-8 bg-gray-800/50 backdrop-blur-sm rounded-full border border-gray-700/50 flex items-center justify-center">
-                  <div className="text-center space-y-2">
-                    <div className="text-2xl font-bold text-gray-200">AI/ML</div>
-                    <div className="text-sm text-gray-400">Engineer</div>
-                  </div>
-                </div>
               </div>
             </motion.div>
           </div>
@@ -251,7 +203,7 @@ const Index = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-16 relative">
+      <section id="about" className="py-20 relative bg-white">
         <div className="container mx-auto px-6 max-w-5xl">
           <motion.div initial={{
           opacity: 0,
@@ -263,15 +215,8 @@ const Index = () => {
           duration: 0.8
         }} viewport={{
           once: true
-        }} className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">About Me</h2>
-            <p className="text-base text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              I'm a multidisciplinary AI engineer with expertise in computer vision, natural language processing, 
-              and machine learning operations. With a passion for turning complex problems into elegant solutions, 
-              I've spent the last few years building scalable AI systems that make a real impact. When I'm not 
-              training models or optimizing pipelines, you'll find me contributing to open-source projects and 
-              exploring the latest research in artificial intelligence.
-            </p>
+        }} className="mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black">Selected works</h2>
           </motion.div>
 
           <motion.div initial={{
@@ -285,8 +230,8 @@ const Index = () => {
           delay: 0.2
         }} viewport={{
           once: true
-        }} className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3 mb-10">
-            {skills.map((skill, index) => <Badge key={skill} variant="outline" className="text-center py-2 px-3 border-gray-600 hover:bg-gray-800 transition-colors duration-200 text-xs">
+        }} className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3 mb-12">
+            {skills.map((skill, index) => <Badge key={skill} variant="outline" className="text-center py-2 px-3 border-gray-300 text-gray-700 hover:bg-gray-100 transition-colors duration-200 text-xs bg-white">
                 {skill}
               </Badge>)}
           </motion.div>
@@ -302,9 +247,15 @@ const Index = () => {
           delay: 0.4
         }} viewport={{
           once: true
-        }} className="text-center">
+        }} className="max-w-3xl">
+            <p className="text-lg text-gray-600 leading-relaxed mb-8">
+              I'm a multidisciplinary AI engineer with expertise in computer vision, natural language processing, 
+              and machine learning operations. With a passion for turning complex problems into elegant solutions, 
+              I've spent the last few years building scalable AI systems that make a real impact.
+            </p>
             <Button 
-              className="bg-gray-600 hover:bg-gray-700 px-6 py-2 rounded-full text-sm"
+              variant="outline"
+              className="border-gray-300 text-gray-700 hover:bg-gray-100 px-6 py-2 rounded-full text-sm"
               onClick={() => window.open(resumeUrl, '_blank')}
             >
               <Download className="mr-2" size={16} />
@@ -315,7 +266,7 @@ const Index = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-16 relative">
+      <section id="projects" className="py-20 relative bg-gray-50">
         <div className="container mx-auto px-6 max-w-6xl">
           <motion.div initial={{
           opacity: 0,
@@ -327,14 +278,14 @@ const Index = () => {
           duration: 0.8
         }} viewport={{
           once: true
-        }} className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Selected Works</h2>
-            <p className="text-base text-gray-300 max-w-2xl mx-auto">
+        }} className="mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black">Featured Projects</h2>
+            <p className="text-lg text-gray-600 max-w-2xl">
               A showcase of my recent projects in machine learning, computer vision, and AI research
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
               <motion.div key={project.title} initial={{
             opacity: 0,
@@ -348,22 +299,22 @@ const Index = () => {
           }} viewport={{
             once: true
           }}>
-                <Card className="bg-gray-800/50 border-gray-700 hover:bg-gray-800/70 transition-all duration-300 group h-full">
-                  <CardContent className="p-5">
-                    {project.featured && <Badge className="mb-3 bg-gray-600 text-xs">Featured</Badge>}
-                    <h3 className="text-lg font-bold mb-2 group-hover:text-gray-400 transition-colors">
+                <Card className="bg-white border-gray-200 hover:shadow-lg transition-all duration-300 group h-full">
+                  <CardContent className="p-6">
+                    {project.featured && <Badge className="mb-4 bg-gray-100 text-gray-700 text-xs">Featured</Badge>}
+                    <h3 className="text-xl font-bold mb-3 group-hover:text-gray-600 transition-colors text-black">
                       {project.title}
                     </h3>
-                    <p className="text-gray-300 mb-3 text-sm leading-relaxed">{project.description}</p>
+                    <p className="text-gray-600 mb-4 text-sm leading-relaxed">{project.description}</p>
                     
-                    <div className="flex flex-wrap gap-1 mb-3">
-                      {project.techStack.map(tech => <Badge key={tech} variant="outline" className="text-xs border-gray-600 px-2 py-1">
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {project.techStack.map(tech => <Badge key={tech} variant="outline" className="text-xs border-gray-300 px-2 py-1 text-gray-600 bg-white">
                           {tech}
                         </Badge>)}
                     </div>
 
-                    <div className="flex flex-wrap gap-2 mb-3">
-                      {project.tags.map(tag => <span key={tag} className="text-gray-400 text-xs">
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {project.tags.map(tag => <span key={tag} className="text-gray-500 text-xs">
                           {tag}
                         </span>)}
                     </div>
@@ -372,13 +323,13 @@ const Index = () => {
                       <Button 
                         variant="outline" 
                         size="sm" 
-                        className="border-gray-600 hover:bg-gray-700 text-xs"
+                        className="border-gray-300 hover:bg-gray-100 text-xs text-gray-700"
                         onClick={() => window.open(project.githubUrl, '_blank')}
                       >
                         <Github className="mr-1" size={14} />
                         GitHub
                       </Button>
-                      <ExternalLink size={14} className="text-gray-400 group-hover:text-gray-300 transition-colors" />
+                      <ExternalLink size={14} className="text-gray-400 group-hover:text-gray-600 transition-colors" />
                     </div>
                   </CardContent>
                 </Card>
@@ -389,7 +340,7 @@ const Index = () => {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-16 relative">
+      <section id="experience" className="py-20 relative bg-white">
         <div className="container mx-auto px-6 max-w-4xl">
           <motion.div initial={{
           opacity: 0,
@@ -401,8 +352,8 @@ const Index = () => {
           duration: 0.8
         }} viewport={{
           once: true
-        }} className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Experience</h2>
+        }} className="mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black">Experience</h2>
           </motion.div>
 
           <div className="max-w-3xl mx-auto">
@@ -417,18 +368,18 @@ const Index = () => {
             delay: index * 0.2
           }} viewport={{
             once: true
-          }} className="relative pl-6 pb-10 border-l border-gray-600 last:border-l-0">
-                <div className="absolute w-3 h-3 bg-gray-600 rounded-full -left-1.5 top-0"></div>
-                <div className="bg-gray-800/50 p-5 rounded-lg border border-gray-700">
-                  <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-3">
+          }} className="relative pl-6 pb-12 border-l border-gray-300 last:border-l-0">
+                <div className="absolute w-3 h-3 bg-gray-400 rounded-full -left-1.5 top-0"></div>
+                <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                  <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
                     <div>
-                      <h3 className="text-lg font-bold text-gray-400">{exp.role}</h3>
-                      <h4 className="text-base text-gray-300">{exp.company}</h4>
+                      <h3 className="text-lg font-bold text-black">{exp.role}</h3>
+                      <h4 className="text-base text-gray-600">{exp.company}</h4>
                     </div>
-                    <span className="text-gray-400 mt-1 md:mt-0 text-sm">{exp.timeline}</span>
+                    <span className="text-gray-500 mt-1 md:mt-0 text-sm">{exp.timeline}</span>
                   </div>
-                  <ul className="space-y-1">
-                    {exp.contributions.map((contribution, idx) => <li key={idx} className="text-gray-300 flex items-start text-sm">
+                  <ul className="space-y-2">
+                    {exp.contributions.map((contribution, idx) => <li key={idx} className="text-gray-600 flex items-start text-sm">
                         <span className="text-gray-400 mr-2">•</span>
                         {contribution}
                       </li>)}
@@ -440,7 +391,7 @@ const Index = () => {
       </section>
 
       {/* Education Section */}
-      <section id="education" className="py-16 relative">
+      <section id="education" className="py-20 relative bg-gray-50">
         <div className="container mx-auto px-6 max-w-4xl">
           <motion.div initial={{
           opacity: 0,
@@ -452,8 +403,8 @@ const Index = () => {
           duration: 0.8
         }} viewport={{
           once: true
-        }} className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Education</h2>
+        }} className="mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black">Education</h2>
           </motion.div>
 
           <div className="max-w-3xl mx-auto grid gap-6">
@@ -469,16 +420,16 @@ const Index = () => {
           }} viewport={{
             once: true
           }}>
-                <Card className="bg-gray-800/50 border-gray-700 hover:bg-gray-800/70 transition-all duration-300">
-                  <CardContent className="p-5">
+                <Card className="bg-white border-gray-200 hover:shadow-lg transition-all duration-300">
+                  <CardContent className="p-6">
                     <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
                       <div>
-                        <h3 className="text-lg font-bold text-gray-400">{edu.institution}</h3>
-                        <h4 className="text-base text-gray-300">{edu.degree}</h4>
+                        <h3 className="text-lg font-bold text-black">{edu.institution}</h3>
+                        <h4 className="text-base text-gray-600">{edu.degree}</h4>
                       </div>
                       <div className="text-right mt-2 md:mt-0">
-                        <span className="text-gray-400 text-sm block">{edu.timeline}</span>
-                        <span className="text-gray-300 text-sm">{edu.grade}</span>
+                        <span className="text-gray-500 text-sm block">{edu.timeline}</span>
+                        <span className="text-gray-600 text-sm">{edu.grade}</span>
                       </div>
                     </div>
                   </CardContent>
@@ -489,7 +440,7 @@ const Index = () => {
       </section>
 
       {/* Research Section */}
-      <section id="research" className="py-16 relative">
+      <section id="research" className="py-20 relative bg-white">
         <div className="container mx-auto px-6 max-w-4xl">
           <motion.div initial={{
           opacity: 0,
@@ -501,8 +452,8 @@ const Index = () => {
           duration: 0.8
         }} viewport={{
           once: true
-        }} className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Research & Publications</h2>
+        }} className="mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black">Research & Publications</h2>
           </motion.div>
 
           <div className="max-w-3xl mx-auto grid gap-6">
@@ -518,11 +469,11 @@ const Index = () => {
           }} viewport={{
             once: true
           }}>
-                <Card className="bg-gray-800/50 border-gray-700 hover:bg-gray-800/70 transition-all duration-300">
-                  <CardContent className="p-5">
-                    <h3 className="text-lg font-bold mb-2 text-gray-400">{paper.title}</h3>
-                    <p className="text-gray-300 mb-2 font-medium text-sm">{paper.publication}</p>
-                    <p className="text-gray-400 text-sm">{paper.abstract}</p>
+                <Card className="bg-gray-50 border-gray-200 hover:shadow-lg transition-all duration-300">
+                  <CardContent className="p-6">
+                    <h3 className="text-lg font-bold mb-2 text-black">{paper.title}</h3>
+                    <p className="text-gray-600 mb-2 font-medium text-sm">{paper.publication}</p>
+                    <p className="text-gray-500 text-sm">{paper.abstract}</p>
                   </CardContent>
                 </Card>
               </motion.div>)}
@@ -531,7 +482,7 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-16 relative">
+      <section id="contact" className="py-20 relative bg-gray-50">
         <div className="container mx-auto px-6 max-w-4xl">
           <motion.div initial={{
           opacity: 0,
@@ -543,9 +494,9 @@ const Index = () => {
           duration: 0.8
         }} viewport={{
           once: true
-        }} className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Get in Touch</h2>
-            <p className="text-base text-gray-300 max-w-xl mx-auto">
+        }} className="mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black">Get in Touch</h2>
+            <p className="text-lg text-gray-600 max-w-xl">
               Ready to collaborate or discuss opportunities? Feel free to reach out through any of the channels below.
             </p>
           </motion.div>
@@ -562,40 +513,40 @@ const Index = () => {
         }} viewport={{
           once: true
         }} className="max-w-xl mx-auto">
-            <Card className="bg-gray-800/50 border-gray-700">
+            <Card className="bg-white border-gray-200">
               <CardContent className="p-8">
                 <div className="space-y-6">
                   <div className="flex items-center space-x-4">
-                    <div className="bg-gray-700 p-3 rounded-full">
-                      <Mail size={20} className="text-gray-300" />
+                    <div className="bg-gray-100 p-3 rounded-full">
+                      <Mail size={20} className="text-gray-600" />
                     </div>
                     <div>
-                      <h3 className="font-medium text-gray-200">Email</h3>
-                      <a href="mailto:aryansingh9503@gmail.com" className="text-gray-400 hover:text-gray-300 transition-colors">
+                      <h3 className="font-medium text-black">Email</h3>
+                      <a href="mailto:aryansingh9503@gmail.com" className="text-gray-600 hover:text-black transition-colors">
                         aryansingh9503@gmail.com
                       </a>
                     </div>
                   </div>
 
                   <div className="flex items-center space-x-4">
-                    <div className="bg-gray-700 p-3 rounded-full">
-                      <Phone size={20} className="text-gray-300" />
+                    <div className="bg-gray-100 p-3 rounded-full">
+                      <Phone size={20} className="text-gray-600" />
                     </div>
                     <div>
-                      <h3 className="font-medium text-gray-200">Phone</h3>
-                      <a href="tel:+917428716989" className="text-gray-400 hover:text-gray-300 transition-colors">
+                      <h3 className="font-medium text-black">Phone</h3>
+                      <a href="tel:+917428716989" className="text-gray-600 hover:text-black transition-colors">
                         +91 7428716989
                       </a>
                     </div>
                   </div>
 
                   <div className="flex items-center space-x-4">
-                    <div className="bg-gray-700 p-3 rounded-full">
-                      <Linkedin size={20} className="text-gray-300" />
+                    <div className="bg-gray-100 p-3 rounded-full">
+                      <Linkedin size={20} className="text-gray-600" />
                     </div>
                     <div>
-                      <h3 className="font-medium text-gray-200">LinkedIn</h3>
-                      <a href="#" className="text-gray-400 hover:text-gray-300 transition-colors">
+                      <h3 className="font-medium text-black">LinkedIn</h3>
+                      <a href="#" className="text-gray-600 hover:text-black transition-colors">
                         Connect with me on LinkedIn
                       </a>
                     </div>
@@ -616,25 +567,25 @@ const Index = () => {
           delay: 0.4
         }} viewport={{
           once: true
-        }} className="text-center mt-10">
-            <div className="flex justify-center space-x-4">
-              <a href="https://github.com/aryanmarshian" className="text-gray-400 hover:text-white transition-colors">
-                <Github size={20} />
+        }} className="text-center mt-12">
+            <div className="flex justify-center space-x-6">
+              <a href="https://github.com/aryanmarshian" className="text-gray-500 hover:text-black transition-colors">
+                <Github size={24} />
               </a>
-              <a href="mailto:aryansingh9503@gmail.com" className="text-gray-400 hover:text-white transition-colors">
-                <Mail size={20} />
+              <a href="mailto:aryansingh9503@gmail.com" className="text-gray-500 hover:text-black transition-colors">
+                <Mail size={24} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Linkedin size={20} />
+              <a href="#" className="text-gray-500 hover:text-black transition-colors">
+                <Linkedin size={24} />
               </a>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-6 border-t border-gray-800">
-        <div className="container mx-auto px-6 text-center text-gray-400">
+      <footer className="py-8 border-t border-gray-200 bg-white">
+        <div className="container mx-auto px-6 text-center text-gray-500">
           <p className="text-sm">&copy; 2024 Aryan Singh. Built with React & Tailwind CSS.</p>
         </div>
       </footer>
