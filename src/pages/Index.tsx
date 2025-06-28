@@ -101,7 +101,7 @@ const Index = () => {
       description: "Thank you for your message. I'll get back to you soon."
     });
   };
-  return <div className="min-h-screen bg-gray-100 text-gray-900 overflow-x-hidden">
+  return <div className="min-h-screen bg-gray-50 text-gray-900 overflow-x-hidden">
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">
@@ -111,7 +111,7 @@ const Index = () => {
             className="text-xl font-bold tracking-tight"
           >
             <span className="text-gray-900">Aryan</span>
-            <span className="text-gray-500 font-normal ml-1">Singh</span>
+            <span className="text-gray-600 font-normal ml-1">Singh</span>
           </motion.div>
           
           {/* Desktop Navigation */}
@@ -153,38 +153,37 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center relative overflow-hidden bg-white">        
-        <div className="container mx-auto px-6 py-20 relative z-10 max-w-7xl">
-          <div className="max-w-4xl">
+      <section className="min-h-screen flex items-center relative overflow-hidden bg-gradient-to-br from-white via-gray-50 to-gray-100">        
+        <div className="container mx-auto px-4 sm:px-6 py-20 relative z-10 max-w-7xl">
+          <div className="max-w-5xl">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="space-y-8"
+              className="space-y-6 sm:space-y-8"
             >
-              <div className="space-y-6">
-                <h1 className="text-xl md:text-2xl text-gray-600 font-normal">Hello! I'm Aryan.</h1>
-                <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold leading-[0.9] text-gray-900">
+              <div className="space-y-4 sm:space-y-6">
+                <h1 className="text-lg sm:text-xl md:text-2xl text-gray-600 font-normal">Hello! I'm Aryan.</h1>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[0.9] text-gray-900">
                   Specializing in{' '}
-                  <span className="text-gray-800">
+                  <span className="text-gray-800 block sm:inline">
                     machine learning
                   </span>
-                  <br />
-                  solutions with{' '}
-                  <br />
-                  emphasis on{' '}
-                  <span className="text-gray-700">
+                  <br className="hidden sm:block" />
+                  <span className="block sm:inline">solutions with{' '}</span>
+                  <br className="hidden sm:block" />
+                  <span className="block sm:inline">emphasis on{' '}</span>
+                  <span className="text-gray-700 block sm:inline">
                     visual intelligence
                   </span>
                 </h2>
-                <div className="space-y-4">
-                  <p className="text-xl md:text-2xl lg:text-3xl text-gray-600 font-light mt-6">
+                <div className="space-y-4 sm:space-y-6">
+                  <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-600 font-light">
                     Machine Learning | Deep Learning | Artificial Intelligence
                   </p>
-                  <div className="mt-8">
+                  <div className="pt-4 sm:pt-6">
                     <Button 
-                      variant="outline"
-                      className="border-gray-400 text-gray-800 hover:bg-gray-50 hover:border-gray-500 px-8 py-3 rounded-lg text-base font-medium transition-all duration-200"
+                      className="bg-gray-900 hover:bg-gray-800 text-white border-0 px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-sm sm:text-base font-medium transition-all duration-200 shadow-lg hover:shadow-xl"
                       onClick={() => window.open(resumeUrl, '_blank')}
                     >
                       <Eye className="mr-2" size={18} />
@@ -199,17 +198,17 @@ const Index = () => {
       </section>
 
       {/* About/Selected Works Section */}
-      <section id="about" className="py-20 relative bg-gray-50">
-        <div className="container mx-auto px-6 max-w-5xl">
+      <section id="about" className="py-16 sm:py-20 relative bg-white">
+        <div className="container mx-auto px-4 sm:px-6 max-w-5xl">
           <motion.div 
             initial={{ opacity: 0, y: 50 }} 
             whileInView={{ opacity: 1, y: 0 }} 
             transition={{ duration: 0.8 }} 
             viewport={{ once: true }} 
-            className="mb-16"
+            className="mb-12 sm:mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-gray-900">Selected works</h2>
-            <p className="text-lg text-gray-600 max-w-2xl leading-relaxed">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 text-gray-900">Selected works</h2>
+            <p className="text-base sm:text-lg text-gray-600 max-w-2xl leading-relaxed">
               A multidisciplinary AI engineer passionate about building scalable intelligent systems, 
               solving real-world problems through machine learning and computer vision to achieve 
               impactful solutions.
@@ -221,13 +220,13 @@ const Index = () => {
             whileInView={{ opacity: 1, y: 0 }} 
             transition={{ duration: 0.8, delay: 0.2 }} 
             viewport={{ once: true }} 
-            className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3 mb-12"
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 sm:gap-3 mb-8 sm:mb-12"
           >
             {skills.map((skill, index) => (
               <Badge 
                 key={skill} 
                 variant="outline" 
-                className="text-center py-2 px-3 border-gray-300 text-gray-700 hover:bg-gray-100 hover:border-gray-400 transition-all duration-200 text-xs bg-white"
+                className="text-center py-2 px-2 sm:px-3 border-gray-300 text-gray-700 hover:bg-gray-100 hover:border-gray-400 transition-all duration-200 text-xs bg-white"
               >
                 {skill}
               </Badge>
@@ -243,7 +242,7 @@ const Index = () => {
           >
             <Button 
               variant="outline"
-              className="border-gray-400 text-gray-700 hover:bg-gray-100 hover:border-gray-500 px-6 py-2 rounded-lg text-sm transition-all duration-200"
+              className="border-gray-400 text-gray-700 hover:bg-gray-100 hover:border-gray-500 px-4 sm:px-6 py-2 rounded-lg text-sm transition-all duration-200"
               onClick={() => window.open(resumeUrl, '_blank')}
             >
               <Download className="mr-2" size={16} />
@@ -254,22 +253,22 @@ const Index = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 relative bg-white">
-        <div className="container mx-auto px-6 max-w-6xl">
+      <section id="projects" className="py-16 sm:py-20 relative bg-gray-50">
+        <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
           <motion.div 
             initial={{ opacity: 0, y: 50 }} 
             whileInView={{ opacity: 1, y: 0 }} 
             transition={{ duration: 0.8 }} 
             viewport={{ once: true }} 
-            className="mb-16"
+            className="mb-12 sm:mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-gray-900">Featured Projects</h2>
-            <p className="text-lg text-gray-600 max-w-2xl">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 text-gray-900">Featured Projects</h2>
+            <p className="text-base sm:text-lg text-gray-600 max-w-2xl">
               A showcase of my recent projects in machine learning, computer vision, and AI research
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {projects.map((project, index) => (
               <motion.div 
                 key={project.title} 
@@ -279,9 +278,9 @@ const Index = () => {
                 viewport={{ once: true }}
               >
                 <Card className="bg-white border-gray-200 hover:border-gray-300 hover:shadow-lg transition-all duration-300 group h-full">
-                  <CardContent className="p-6">
+                  <CardContent className="p-4 sm:p-6">
                     {project.featured && <Badge className="mb-4 bg-gray-200 text-gray-800 text-xs border-0">Featured</Badge>}
-                    <h3 className="text-xl font-bold mb-3 group-hover:text-gray-700 transition-colors text-gray-900">
+                    <h3 className="text-lg sm:text-xl font-bold mb-3 group-hover:text-gray-700 transition-colors text-gray-900">
                       {project.title}
                     </h3>
                     <p className="text-gray-600 mb-4 text-sm leading-relaxed">{project.description}</p>
@@ -323,7 +322,7 @@ const Index = () => {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-20 relative bg-gray-50">
+      <section id="experience" className="py-20 relative bg-white">
         <div className="container mx-auto px-6 max-w-4xl">
           <motion.div 
             initial={{ opacity: 0, y: 50 }} 
@@ -370,7 +369,7 @@ const Index = () => {
       </section>
 
       {/* Education Section */}
-      <section id="education" className="py-20 relative bg-white">
+      <section id="education" className="py-20 relative bg-gray-50">
         <div className="container mx-auto px-6 max-w-4xl">
           <motion.div 
             initial={{ opacity: 0, y: 50 }} 
@@ -412,7 +411,7 @@ const Index = () => {
       </section>
 
       {/* Research Section */}
-      <section id="research" className="py-20 relative bg-gray-50">
+      <section id="research" className="py-20 relative bg-white">
         <div className="container mx-auto px-6 max-w-4xl">
           <motion.div 
             initial={{ opacity: 0, y: 50 }} 
@@ -447,7 +446,7 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 relative bg-white">
+      <section id="contact" className="py-20 relative bg-gray-50">
         <div className="container mx-auto px-6 max-w-4xl">
           <motion.div 
             initial={{ opacity: 0, y: 50 }} 
@@ -473,7 +472,7 @@ const Index = () => {
               <CardContent className="p-8">
                 <div className="space-y-6">
                   <div className="flex items-center space-x-4">
-                    <div className="bg-gray-800 p-3 rounded-lg">
+                    <div className="bg-gray-900 p-3 rounded-lg">
                       <Mail size={20} className="text-white" />
                     </div>
                     <div>
@@ -485,7 +484,7 @@ const Index = () => {
                   </div>
 
                   <div className="flex items-center space-x-4">
-                    <div className="bg-gray-800 p-3 rounded-lg">
+                    <div className="bg-gray-900 p-3 rounded-lg">
                       <Phone size={20} className="text-white" />
                     </div>
                     <div>
@@ -497,7 +496,7 @@ const Index = () => {
                   </div>
 
                   <div className="flex items-center space-x-4">
-                    <div className="bg-gray-800 p-3 rounded-lg">
+                    <div className="bg-gray-900 p-3 rounded-lg">
                       <Linkedin size={20} className="text-white" />
                     </div>
                     <div>
@@ -535,7 +534,7 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 border-t border-gray-200 bg-gray-50">
+      <footer className="py-8 border-t border-gray-200 bg-white">
         <div className="container mx-auto px-6 text-center text-gray-600">
           <p className="text-sm">&copy; 2024 Aryan Singh. Built with React & Tailwind CSS.</p>
         </div>
