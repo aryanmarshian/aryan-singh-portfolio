@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowRight, Github, Linkedin, Mail, Download, ExternalLink, Menu, X, Phone } from 'lucide-react';
+import { ArrowRight, Github, Linkedin, Mail, Download, ExternalLink, Menu, X, Phone, Eye } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -101,7 +101,7 @@ const Index = () => {
       description: "Thank you for your message. I'll get back to you soon."
     });
   };
-  return <div className="min-h-screen bg-gray-50 text-gray-900 overflow-x-hidden">
+  return <div className="min-h-screen bg-gray-100 text-gray-900 overflow-x-hidden">
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">
@@ -153,7 +153,7 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center relative overflow-hidden bg-gray-50">        
+      <section className="min-h-screen flex items-center relative overflow-hidden bg-white">        
         <div className="container mx-auto px-6 py-20 relative z-10 max-w-7xl">
           <div className="max-w-4xl">
             <motion.div
@@ -163,7 +163,7 @@ const Index = () => {
               className="space-y-8"
             >
               <div className="space-y-6">
-                <h1 className="text-lg md:text-xl text-gray-600 font-normal">Hello! I'm Aryan.</h1>
+                <h1 className="text-xl md:text-2xl text-gray-600 font-normal">Hello! I'm Aryan.</h1>
                 <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold leading-[0.9] text-gray-900">
                   Specializing in{' '}
                   <span className="text-gray-800">
@@ -177,9 +177,21 @@ const Index = () => {
                     visual intelligence
                   </span>
                 </h2>
-                <p className="text-xl md:text-2xl text-gray-600 font-light mt-6">
-                  ML • DL • AI
-                </p>
+                <div className="space-y-4">
+                  <p className="text-xl md:text-2xl lg:text-3xl text-gray-600 font-light mt-6">
+                    Machine Learning | Deep Learning | Artificial Intelligence
+                  </p>
+                  <div className="mt-8">
+                    <Button 
+                      variant="outline"
+                      className="border-gray-400 text-gray-800 hover:bg-gray-50 hover:border-gray-500 px-8 py-3 rounded-lg text-base font-medium transition-all duration-200"
+                      onClick={() => window.open(resumeUrl, '_blank')}
+                    >
+                      <Eye className="mr-2" size={18} />
+                      View Resume
+                    </Button>
+                  </div>
+                </div>
               </div>
             </motion.div>
           </div>
@@ -187,7 +199,7 @@ const Index = () => {
       </section>
 
       {/* About/Selected Works Section */}
-      <section id="about" className="py-20 relative bg-gray-100">
+      <section id="about" className="py-20 relative bg-gray-50">
         <div className="container mx-auto px-6 max-w-5xl">
           <motion.div 
             initial={{ opacity: 0, y: 50 }} 
@@ -215,7 +227,7 @@ const Index = () => {
               <Badge 
                 key={skill} 
                 variant="outline" 
-                className="text-center py-2 px-3 border-gray-200 text-gray-700 hover:bg-gray-100 hover:border-gray-300 transition-all duration-200 text-xs bg-white"
+                className="text-center py-2 px-3 border-gray-300 text-gray-700 hover:bg-gray-100 hover:border-gray-400 transition-all duration-200 text-xs bg-white"
               >
                 {skill}
               </Badge>
@@ -231,7 +243,7 @@ const Index = () => {
           >
             <Button 
               variant="outline"
-              className="border-gray-300 text-gray-700 hover:bg-gray-100 hover:border-gray-400 px-6 py-2 rounded-lg text-sm transition-all duration-200"
+              className="border-gray-400 text-gray-700 hover:bg-gray-100 hover:border-gray-500 px-6 py-2 rounded-lg text-sm transition-all duration-200"
               onClick={() => window.open(resumeUrl, '_blank')}
             >
               <Download className="mr-2" size={16} />
@@ -242,7 +254,7 @@ const Index = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 relative bg-gray-50">
+      <section id="projects" className="py-20 relative bg-white">
         <div className="container mx-auto px-6 max-w-6xl">
           <motion.div 
             initial={{ opacity: 0, y: 50 }} 
@@ -266,9 +278,9 @@ const Index = () => {
                 transition={{ duration: 0.8, delay: index * 0.1 }} 
                 viewport={{ once: true }}
               >
-                <Card className="bg-white border-gray-100 hover:border-gray-200 hover:shadow-lg transition-all duration-300 group h-full">
+                <Card className="bg-white border-gray-200 hover:border-gray-300 hover:shadow-lg transition-all duration-300 group h-full">
                   <CardContent className="p-6">
-                    {project.featured && <Badge className="mb-4 bg-gray-100 text-gray-700 text-xs border-0">Featured</Badge>}
+                    {project.featured && <Badge className="mb-4 bg-gray-200 text-gray-800 text-xs border-0">Featured</Badge>}
                     <h3 className="text-xl font-bold mb-3 group-hover:text-gray-700 transition-colors text-gray-900">
                       {project.title}
                     </h3>
@@ -276,7 +288,7 @@ const Index = () => {
                     
                     <div className="flex flex-wrap gap-2 mb-4">
                       {project.techStack.map(tech => (
-                        <Badge key={tech} variant="outline" className="text-xs border-gray-200 px-2 py-1 text-gray-600 bg-gray-50 hover:bg-gray-100 transition-colors">
+                        <Badge key={tech} variant="outline" className="text-xs border-gray-300 px-2 py-1 text-gray-600 bg-gray-50 hover:bg-gray-100 transition-colors">
                           {tech}
                         </Badge>
                       ))}
@@ -294,7 +306,7 @@ const Index = () => {
                       <Button 
                         variant="outline" 
                         size="sm" 
-                        className="border-gray-200 hover:bg-gray-50 hover:border-gray-300 text-xs text-gray-700 transition-all duration-200"
+                        className="border-gray-300 hover:bg-gray-100 hover:border-gray-400 text-xs text-gray-700 transition-all duration-200"
                         onClick={() => window.open(project.githubUrl, '_blank')}
                       >
                         <Github className="mr-1" size={16} strokeWidth={2} />
@@ -311,7 +323,7 @@ const Index = () => {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-20 relative bg-gray-100">
+      <section id="experience" className="py-20 relative bg-gray-50">
         <div className="container mx-auto px-6 max-w-4xl">
           <motion.div 
             initial={{ opacity: 0, y: 50 }} 
@@ -358,7 +370,7 @@ const Index = () => {
       </section>
 
       {/* Education Section */}
-      <section id="education" className="py-20 relative bg-gray-50">
+      <section id="education" className="py-20 relative bg-white">
         <div className="container mx-auto px-6 max-w-4xl">
           <motion.div 
             initial={{ opacity: 0, y: 50 }} 
@@ -379,7 +391,7 @@ const Index = () => {
                 transition={{ duration: 0.8, delay: index * 0.2 }} 
                 viewport={{ once: true }}
               >
-                <Card className="bg-white border-gray-100 hover:border-gray-200 hover:shadow-lg transition-all duration-300">
+                <Card className="bg-white border-gray-200 hover:border-gray-300 hover:shadow-lg transition-all duration-300">
                   <CardContent className="p-6">
                     <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
                       <div>
@@ -421,7 +433,7 @@ const Index = () => {
                 transition={{ duration: 0.8, delay: index * 0.2 }} 
                 viewport={{ once: true }}
               >
-                <Card className="bg-white border-gray-100 hover:border-gray-200 hover:shadow-lg transition-all duration-300">
+                <Card className="bg-white border-gray-200 hover:border-gray-300 hover:shadow-lg transition-all duration-300">
                   <CardContent className="p-6">
                     <h3 className="text-lg font-bold mb-2 text-gray-900">{paper.title}</h3>
                     <p className="text-gray-600 mb-2 font-medium text-sm">{paper.publication}</p>
@@ -435,7 +447,7 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 relative bg-gray-50">
+      <section id="contact" className="py-20 relative bg-white">
         <div className="container mx-auto px-6 max-w-4xl">
           <motion.div 
             initial={{ opacity: 0, y: 50 }} 
