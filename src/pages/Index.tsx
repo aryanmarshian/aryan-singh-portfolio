@@ -101,9 +101,9 @@ const Index = () => {
       description: "Thank you for your message. I'll get back to you soon."
     });
   };
-  return <div className="min-h-screen bg-white text-gray-900 overflow-x-hidden">
+  return <div className="min-h-screen bg-gray-50 text-gray-900 overflow-x-hidden">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+      <nav className="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">
           <motion.div 
             initial={{ opacity: 0, x: -20 }} 
@@ -153,7 +153,7 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center relative overflow-hidden bg-white">        
+      <section className="min-h-screen flex items-center relative overflow-hidden bg-gray-50">        
         <div className="container mx-auto px-6 py-20 relative z-10 max-w-7xl">
           <div className="max-w-4xl">
             <motion.div
@@ -163,7 +163,7 @@ const Index = () => {
               className="space-y-8"
             >
               <div className="space-y-6">
-                <h1 className="text-lg md:text-xl text-gray-500 font-normal">Hello! I'm Aryan.</h1>
+                <h1 className="text-lg md:text-xl text-gray-600 font-normal">Hello! I'm Aryan.</h1>
                 <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold leading-[0.9] text-gray-900">
                   Specializing in{' '}
                   <span className="text-gray-800">
@@ -173,19 +173,13 @@ const Index = () => {
                   solutions with{' '}
                   <br />
                   emphasis on{' '}
-                  <span className="text-gray-600">
+                  <span className="text-gray-700">
                     visual intelligence
                   </span>
                 </h2>
-              </div>
-              
-              <div className="pt-8">
-                <Button 
-                  className="bg-gray-800 text-white hover:bg-gray-900 px-8 py-4 rounded-lg text-base font-medium transition-colors duration-200"
-                  onClick={() => window.open('mailto:aryansingh9503@gmail.com', '_blank')}
-                >
-                  Let's Talk <ArrowRight className="ml-2" size={20} />
-                </Button>
+                <p className="text-xl md:text-2xl text-gray-600 font-light mt-6">
+                  ML • DL • AI
+                </p>
               </div>
             </motion.div>
           </div>
@@ -193,7 +187,7 @@ const Index = () => {
       </section>
 
       {/* About/Selected Works Section */}
-      <section id="about" className="py-20 relative bg-gray-50">
+      <section id="about" className="py-20 relative bg-gray-100">
         <div className="container mx-auto px-6 max-w-5xl">
           <motion.div 
             initial={{ opacity: 0, y: 50 }} 
@@ -248,7 +242,7 @@ const Index = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 relative bg-white">
+      <section id="projects" className="py-20 relative bg-gray-50">
         <div className="container mx-auto px-6 max-w-6xl">
           <motion.div 
             initial={{ opacity: 0, y: 50 }} 
@@ -317,7 +311,7 @@ const Index = () => {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-20 relative bg-gray-50">
+      <section id="experience" className="py-20 relative bg-gray-100">
         <div className="container mx-auto px-6 max-w-4xl">
           <motion.div 
             initial={{ opacity: 0, y: 50 }} 
@@ -337,21 +331,21 @@ const Index = () => {
                 whileInView={{ opacity: 1, x: 0 }} 
                 transition={{ duration: 0.8, delay: index * 0.2 }} 
                 viewport={{ once: true }} 
-                className="relative pl-6 pb-12 border-l border-gray-200 last:border-l-0"
+                className="relative pl-6 pb-12 border-l border-gray-300 last:border-l-0"
               >
-                <div className="absolute w-3 h-3 bg-gray-300 rounded-full -left-1.5 top-0"></div>
-                <div className="bg-white p-6 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-200">
+                <div className="absolute w-3 h-3 bg-gray-400 rounded-full -left-1.5 top-0"></div>
+                <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-200">
                   <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
                     <div>
                       <h3 className="text-lg font-bold text-gray-900">{exp.role}</h3>
-                      <h4 className="text-base text-gray-600">{exp.company}</h4>
+                      <h4 className="text-base text-gray-700">{exp.company}</h4>
                     </div>
-                    <span className="text-gray-500 mt-1 md:mt-0 text-sm">{exp.timeline}</span>
+                    <span className="text-gray-600 mt-1 md:mt-0 text-sm">{exp.timeline}</span>
                   </div>
                   <ul className="space-y-2">
                     {exp.contributions.map((contribution, idx) => (
-                      <li key={idx} className="text-gray-600 flex items-start text-sm">
-                        <span className="text-gray-400 mr-2">•</span>
+                      <li key={idx} className="text-gray-700 flex items-start text-sm">
+                        <span className="text-gray-500 mr-2">•</span>
                         {contribution}
                       </li>
                     ))}
@@ -364,7 +358,7 @@ const Index = () => {
       </section>
 
       {/* Education Section */}
-      <section id="education" className="py-20 relative bg-white">
+      <section id="education" className="py-20 relative bg-gray-50">
         <div className="container mx-auto px-6 max-w-4xl">
           <motion.div 
             initial={{ opacity: 0, y: 50 }} 
@@ -406,7 +400,7 @@ const Index = () => {
       </section>
 
       {/* Research Section */}
-      <section id="research" className="py-20 relative bg-white">
+      <section id="research" className="py-20 relative bg-gray-50">
         <div className="container mx-auto px-6 max-w-4xl">
           <motion.div 
             initial={{ opacity: 0, y: 50 }} 
@@ -441,7 +435,7 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 relative bg-white">
+      <section id="contact" className="py-20 relative bg-gray-50">
         <div className="container mx-auto px-6 max-w-4xl">
           <motion.div 
             initial={{ opacity: 0, y: 50 }} 
@@ -451,7 +445,7 @@ const Index = () => {
             className="mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-8 text-gray-900">Get in Touch</h2>
-            <p className="text-lg text-gray-600 max-w-xl">
+            <p className="text-lg text-gray-700 max-w-xl">
               Ready to collaborate or discuss opportunities? Feel free to reach out through any of the channels below.
             </p>
           </motion.div>
@@ -463,40 +457,40 @@ const Index = () => {
             viewport={{ once: true }} 
             className="max-w-xl mx-auto"
           >
-            <Card className="bg-white border-gray-100 shadow-sm">
+            <Card className="bg-white border-gray-200 shadow-sm">
               <CardContent className="p-8">
                 <div className="space-y-6">
                   <div className="flex items-center space-x-4">
-                    <div className="bg-gray-100 p-3 rounded-lg">
-                      <Mail size={20} className="text-gray-600" />
+                    <div className="bg-gray-800 p-3 rounded-lg">
+                      <Mail size={20} className="text-white" />
                     </div>
                     <div>
                       <h3 className="font-medium text-gray-900">Email</h3>
-                      <a href="mailto:aryansingh9503@gmail.com" className="text-gray-600 hover:text-gray-900 transition-colors">
+                      <a href="mailto:aryansingh9503@gmail.com" className="text-gray-700 hover:text-gray-900 transition-colors">
                         aryansingh9503@gmail.com
                       </a>
                     </div>
                   </div>
 
                   <div className="flex items-center space-x-4">
-                    <div className="bg-gray-100 p-3 rounded-lg">
-                      <Phone size={20} className="text-gray-600" />
+                    <div className="bg-gray-800 p-3 rounded-lg">
+                      <Phone size={20} className="text-white" />
                     </div>
                     <div>
                       <h3 className="font-medium text-gray-900">Phone</h3>
-                      <a href="tel:+917428716989" className="text-gray-600 hover:text-gray-900 transition-colors">
+                      <a href="tel:+917428716989" className="text-gray-700 hover:text-gray-900 transition-colors">
                         +91 7428716989
                       </a>
                     </div>
                   </div>
 
                   <div className="flex items-center space-x-4">
-                    <div className="bg-gray-100 p-3 rounded-lg">
-                      <Linkedin size={20} className="text-gray-600" />
+                    <div className="bg-gray-800 p-3 rounded-lg">
+                      <Linkedin size={20} className="text-white" />
                     </div>
                     <div>
                       <h3 className="font-medium text-gray-900">LinkedIn</h3>
-                      <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">
+                      <a href="#" className="text-gray-700 hover:text-gray-900 transition-colors">
                         Connect with me on LinkedIn
                       </a>
                     </div>
@@ -514,13 +508,13 @@ const Index = () => {
             className="text-center mt-12"
           >
             <div className="flex justify-center space-x-6">
-              <a href="https://github.com/aryanmarshian" className="text-gray-500 hover:text-gray-900 transition-colors p-2 rounded-lg hover:bg-gray-100">
+              <a href="https://github.com/aryanmarshian" className="text-gray-600 hover:text-gray-900 transition-colors p-2 rounded-lg hover:bg-gray-100">
                 <Github size={28} strokeWidth={1.5} />
               </a>
-              <a href="mailto:aryansingh9503@gmail.com" className="text-gray-500 hover:text-gray-900 transition-colors p-2 rounded-lg hover:bg-gray-100">
+              <a href="mailto:aryansingh9503@gmail.com" className="text-gray-600 hover:text-gray-900 transition-colors p-2 rounded-lg hover:bg-gray-100">
                 <Mail size={28} strokeWidth={1.5} />
               </a>
-              <a href="#" className="text-gray-500 hover:text-gray-900 transition-colors p-2 rounded-lg hover:bg-gray-100">
+              <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors p-2 rounded-lg hover:bg-gray-100">
                 <Linkedin size={28} strokeWidth={1.5} />
               </a>
             </div>
@@ -529,8 +523,8 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 border-t border-gray-100 bg-white">
-        <div className="container mx-auto px-6 text-center text-gray-500">
+      <footer className="py-8 border-t border-gray-200 bg-gray-50">
+        <div className="container mx-auto px-6 text-center text-gray-600">
           <p className="text-sm">&copy; 2024 Aryan Singh. Built with React & Tailwind CSS.</p>
         </div>
       </footer>
