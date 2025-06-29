@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
+import { ThemeToggle } from '@/components/ThemeToggle';
 
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -101,32 +102,39 @@ const Index = () => {
       description: "Thank you for your message. I'll get back to you soon."
     });
   };
-  return <div className="min-h-screen bg-gray-50 text-gray-900 overflow-x-hidden">
+
+  return <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
+      <nav className="fixed top-0 w-full z-50 bg-background/95 backdrop-blur-sm border-b border-border">
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">
           <motion.div 
             initial={{ opacity: 0, x: -20 }} 
             animate={{ opacity: 1, x: 0 }} 
             className="text-xl font-bold tracking-tight"
           >
-            <span className="text-gray-900">Aryan</span>
-            <span className="text-gray-600 font-normal ml-1">Singh</span>
+            <span className="text-foreground">Aryan</span>
+            <span className="text-muted-foreground font-normal ml-1">Singh</span>
           </motion.div>
           
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8 text-sm font-medium">
-            {['About', 'Projects', 'Experience', 'Education', 'Contact'].map(item => (
-              <a key={item} href={`#${item.toLowerCase()}`} className="text-gray-600 hover:text-gray-900 transition-colors duration-200">
-                {item}
-              </a>
-            ))}
+          <div className="hidden md:flex items-center space-x-8">
+            <div className="flex space-x-8 text-sm font-medium">
+              {['About', 'Projects', 'Experience', 'Education', 'Contact'].map(item => (
+                <a key={item} href={`#${item.toLowerCase()}`} className="text-muted-foreground hover:text-foreground transition-colors duration-200">
+                  {item}
+                </a>
+              ))}
+            </div>
+            <ThemeToggle />
           </div>
 
           {/* Mobile Menu Button */}
-          <button className="md:hidden text-gray-700" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-            {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
-          </button>
+          <div className="md:hidden flex items-center space-x-2">
+            <ThemeToggle />
+            <button className="text-foreground" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+              {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
@@ -134,14 +142,14 @@ const Index = () => {
           <motion.div 
             initial={{ opacity: 0, y: -20 }} 
             animate={{ opacity: 1, y: 0 }} 
-            className="md:hidden bg-white/95 backdrop-blur-sm border-t border-gray-100"
+            className="md:hidden bg-background/95 backdrop-blur-sm border-t border-border"
           >
             <div className="px-6 py-6 space-y-4 text-sm font-medium">
               {['About', 'Projects', 'Experience', 'Education', 'Contact'].map(item => (
                 <a 
                   key={item} 
                   href={`#${item.toLowerCase()}`} 
-                  className="block text-gray-600 hover:text-gray-900 transition-colors duration-200" 
+                  className="block text-muted-foreground hover:text-foreground transition-colors duration-200" 
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item}
@@ -153,7 +161,7 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center relative overflow-hidden bg-gradient-to-br from-white via-gray-50 to-gray-100">        
+      <section className="min-h-screen flex items-center relative overflow-hidden bg-gradient-to-br from-background via-muted/20 to-muted/40">        
         <div className="container mx-auto px-4 sm:px-6 py-20 relative z-10 max-w-7xl">
           <div className="max-w-5xl">
             <motion.div
@@ -163,27 +171,27 @@ const Index = () => {
               className="space-y-6 sm:space-y-8"
             >
               <div className="space-y-4 sm:space-y-6">
-                <h1 className="text-lg sm:text-xl md:text-2xl text-gray-600 font-normal">Hello! I'm Aryan.</h1>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[0.9] text-gray-900">
+                <h1 className="text-lg sm:text-xl md:text-2xl text-muted-foreground font-normal">Hello! I'm Aryan.</h1>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[0.9] text-foreground">
                   Specializing in{' '}
-                  <span className="text-gray-800 block sm:inline">
+                  <span className="text-foreground/90 block sm:inline">
                     machine learning
                   </span>
                   <br className="hidden sm:block" />
                   <span className="block sm:inline">solutions with{' '}</span>
                   <br className="hidden sm:block" />
                   <span className="block sm:inline">emphasis on{' '}</span>
-                  <span className="text-gray-700 block sm:inline">
+                  <span className="text-foreground/80 block sm:inline">
                     visual intelligence
                   </span>
                 </h2>
                 <div className="space-y-4 sm:space-y-6">
-                  <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-600 font-light">
+                  <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-muted-foreground font-light">
                     Machine Learning | Deep Learning | Artificial Intelligence
                   </p>
                   <div className="pt-4 sm:pt-6">
                     <Button 
-                      className="bg-gray-900 hover:bg-gray-800 text-white border-0 px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-sm sm:text-base font-medium transition-all duration-200 shadow-lg hover:shadow-xl"
+                      className="bg-primary hover:bg-primary/90 text-primary-foreground border-0 px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-sm sm:text-base font-medium transition-all duration-200 shadow-lg hover:shadow-xl"
                       onClick={() => window.open(resumeUrl, '_blank')}
                     >
                       <Eye className="mr-2" size={18} />
@@ -198,7 +206,7 @@ const Index = () => {
       </section>
 
       {/* About/Selected Works Section */}
-      <section id="about" className="py-16 sm:py-20 relative bg-white">
+      <section id="about" className="py-16 sm:py-20 relative bg-background">
         <div className="container mx-auto px-4 sm:px-6 max-w-5xl">
           <motion.div 
             initial={{ opacity: 0, y: 50 }} 
@@ -207,8 +215,8 @@ const Index = () => {
             viewport={{ once: true }} 
             className="mb-12 sm:mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 text-gray-900">Selected works</h2>
-            <p className="text-base sm:text-lg text-gray-600 max-w-2xl leading-relaxed">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 text-foreground">Selected works</h2>
+            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl leading-relaxed">
               A multidisciplinary AI engineer passionate about building scalable intelligent systems, 
               solving real-world problems through machine learning and computer vision to achieve 
               impactful solutions.
@@ -534,8 +542,8 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 border-t border-gray-200 bg-white">
-        <div className="container mx-auto px-6 text-center text-gray-600">
+      <footer className="py-8 border-t border-border bg-background">
+        <div className="container mx-auto px-6 text-center text-muted-foreground">
           <p className="text-sm">&copy; 2024 Aryan Singh. Built with React & Tailwind CSS.</p>
         </div>
       </footer>
