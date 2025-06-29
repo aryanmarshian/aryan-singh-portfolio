@@ -104,7 +104,8 @@ const Index = () => {
     });
   };
 
-  return <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+  return (
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-background/95 backdrop-blur-sm border-b border-border">
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">
@@ -538,7 +539,7 @@ const Index = () => {
                 <Linkedin size={28} strokeWidth={1.5} />
               </a>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -548,7 +549,8 @@ const Index = () => {
           <p className="text-sm">&copy; 2024 Aryan Singh. Built with React & Tailwind CSS.</p>
         </div>
       </footer>
-    </div>;
+    </div>
+  );
 };
 
 export default Index;
