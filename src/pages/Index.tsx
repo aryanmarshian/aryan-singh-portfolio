@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, Github, Linkedin, Mail, Download, ExternalLink, Menu, X, Phone, Eye } from 'lucide-react';
@@ -234,7 +235,7 @@ const Index = () => {
               <Badge 
                 key={skill} 
                 variant="outline" 
-                className="text-center py-2 px-2 sm:px-3 border-gray-300 text-gray-700 hover:bg-gray-100 hover:border-gray-400 transition-all duration-200 text-xs bg-white"
+                className="text-center py-2 px-2 sm:px-3 border-border text-foreground hover:bg-muted hover:border-muted-foreground transition-all duration-200 text-xs bg-card"
               >
                 {skill}
               </Badge>
@@ -250,7 +251,7 @@ const Index = () => {
           >
             <Button 
               variant="outline"
-              className="border-gray-400 text-gray-700 hover:bg-gray-100 hover:border-gray-500 px-4 sm:px-6 py-2 rounded-lg text-sm transition-all duration-200"
+              className="border-border text-foreground hover:bg-muted hover:border-muted-foreground px-4 sm:px-6 py-2 rounded-lg text-sm transition-all duration-200"
               onClick={() => window.open(resumeUrl, '_blank')}
             >
               <Download className="mr-2" size={16} />
@@ -261,7 +262,7 @@ const Index = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-16 sm:py-20 relative bg-gray-50">
+      <section id="projects" className="py-16 sm:py-20 relative bg-muted/50">
         <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
           <motion.div 
             initial={{ opacity: 0, y: 50 }} 
@@ -270,8 +271,8 @@ const Index = () => {
             viewport={{ once: true }} 
             className="mb-12 sm:mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 text-gray-900">Featured Projects</h2>
-            <p className="text-base sm:text-lg text-gray-600 max-w-2xl">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 text-foreground">Featured Projects</h2>
+            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl">
               A showcase of my recent projects in machine learning, computer vision, and AI research
             </p>
           </motion.div>
@@ -285,17 +286,17 @@ const Index = () => {
                 transition={{ duration: 0.8, delay: index * 0.1 }} 
                 viewport={{ once: true }}
               >
-                <Card className="bg-white border-gray-200 hover:border-gray-300 hover:shadow-lg transition-all duration-300 group h-full">
+                <Card className="bg-card border-border hover:border-muted-foreground hover:shadow-lg transition-all duration-300 group h-full">
                   <CardContent className="p-4 sm:p-6">
-                    {project.featured && <Badge className="mb-4 bg-gray-200 text-gray-800 text-xs border-0">Featured</Badge>}
-                    <h3 className="text-lg sm:text-xl font-bold mb-3 group-hover:text-gray-700 transition-colors text-gray-900">
+                    {project.featured && <Badge className="mb-4 bg-muted text-foreground text-xs border-0">Featured</Badge>}
+                    <h3 className="text-lg sm:text-xl font-bold mb-3 group-hover:text-muted-foreground transition-colors text-foreground">
                       {project.title}
                     </h3>
-                    <p className="text-gray-600 mb-4 text-sm leading-relaxed">{project.description}</p>
+                    <p className="text-muted-foreground mb-4 text-sm leading-relaxed">{project.description}</p>
                     
                     <div className="flex flex-wrap gap-2 mb-4">
                       {project.techStack.map(tech => (
-                        <Badge key={tech} variant="outline" className="text-xs border-gray-300 px-2 py-1 text-gray-600 bg-gray-50 hover:bg-gray-100 transition-colors">
+                        <Badge key={tech} variant="outline" className="text-xs border-border px-2 py-1 text-muted-foreground bg-muted/50 hover:bg-muted transition-colors">
                           {tech}
                         </Badge>
                       ))}
@@ -303,7 +304,7 @@ const Index = () => {
 
                     <div className="flex flex-wrap gap-2 mb-4">
                       {project.tags.map(tag => (
-                        <span key={tag} className="text-gray-500 text-xs">
+                        <span key={tag} className="text-muted-foreground text-xs">
                           {tag}
                         </span>
                       ))}
@@ -313,13 +314,13 @@ const Index = () => {
                       <Button 
                         variant="outline" 
                         size="sm" 
-                        className="border-gray-300 hover:bg-gray-100 hover:border-gray-400 text-xs text-gray-700 transition-all duration-200"
+                        className="border-border hover:bg-muted hover:border-muted-foreground text-xs text-foreground transition-all duration-200"
                         onClick={() => window.open(project.githubUrl, '_blank')}
                       >
                         <Github className="mr-1" size={16} strokeWidth={2} />
                         GitHub
                       </Button>
-                      <ExternalLink size={14} className="text-gray-400 group-hover:text-gray-600 transition-colors" />
+                      <ExternalLink size={14} className="text-muted-foreground group-hover:text-foreground transition-colors" />
                     </div>
                   </CardContent>
                 </Card>
@@ -330,7 +331,7 @@ const Index = () => {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-20 relative bg-white">
+      <section id="experience" className="py-20 relative bg-background">
         <div className="container mx-auto px-6 max-w-4xl">
           <motion.div 
             initial={{ opacity: 0, y: 50 }} 
@@ -339,7 +340,7 @@ const Index = () => {
             viewport={{ once: true }} 
             className="mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-gray-900">Experience</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-foreground">Experience</h2>
           </motion.div>
 
           <div className="max-w-3xl mx-auto">
@@ -350,21 +351,21 @@ const Index = () => {
                 whileInView={{ opacity: 1, x: 0 }} 
                 transition={{ duration: 0.8, delay: index * 0.2 }} 
                 viewport={{ once: true }} 
-                className="relative pl-6 pb-12 border-l border-gray-300 last:border-l-0"
+                className="relative pl-6 pb-12 border-l border-border last:border-l-0"
               >
-                <div className="absolute w-3 h-3 bg-gray-400 rounded-full -left-1.5 top-0"></div>
-                <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-200">
+                <div className="absolute w-3 h-3 bg-muted-foreground rounded-full -left-1.5 top-0"></div>
+                <div className="bg-card p-6 rounded-lg border border-border shadow-sm hover:shadow-md transition-shadow duration-200">
                   <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
                     <div>
-                      <h3 className="text-lg font-bold text-gray-900">{exp.role}</h3>
-                      <h4 className="text-base text-gray-700">{exp.company}</h4>
+                      <h3 className="text-lg font-bold text-foreground">{exp.role}</h3>
+                      <h4 className="text-base text-muted-foreground">{exp.company}</h4>
                     </div>
-                    <span className="text-gray-600 mt-1 md:mt-0 text-sm">{exp.timeline}</span>
+                    <span className="text-muted-foreground mt-1 md:mt-0 text-sm">{exp.timeline}</span>
                   </div>
                   <ul className="space-y-2">
                     {exp.contributions.map((contribution, idx) => (
-                      <li key={idx} className="text-gray-700 flex items-start text-sm">
-                        <span className="text-gray-500 mr-2">•</span>
+                      <li key={idx} className="text-muted-foreground flex items-start text-sm">
+                        <span className="text-muted-foreground mr-2">•</span>
                         {contribution}
                       </li>
                     ))}
@@ -377,7 +378,7 @@ const Index = () => {
       </section>
 
       {/* Education Section */}
-      <section id="education" className="py-20 relative bg-gray-50">
+      <section id="education" className="py-20 relative bg-muted/50">
         <div className="container mx-auto px-6 max-w-4xl">
           <motion.div 
             initial={{ opacity: 0, y: 50 }} 
@@ -386,7 +387,7 @@ const Index = () => {
             viewport={{ once: true }} 
             className="mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-gray-900">Education</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-foreground">Education</h2>
           </motion.div>
 
           <div className="max-w-3xl mx-auto grid gap-6">
@@ -398,16 +399,16 @@ const Index = () => {
                 transition={{ duration: 0.8, delay: index * 0.2 }} 
                 viewport={{ once: true }}
               >
-                <Card className="bg-white border-gray-200 hover:border-gray-300 hover:shadow-lg transition-all duration-300">
+                <Card className="bg-card border-border hover:border-muted-foreground hover:shadow-lg transition-all duration-300">
                   <CardContent className="p-6">
                     <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
                       <div>
-                        <h3 className="text-lg font-bold text-gray-900">{edu.institution}</h3>
-                        <h4 className="text-base text-gray-600">{edu.degree}</h4>
+                        <h3 className="text-lg font-bold text-foreground">{edu.institution}</h3>
+                        <h4 className="text-base text-muted-foreground">{edu.degree}</h4>
                       </div>
                       <div className="text-right mt-2 md:mt-0">
-                        <span className="text-gray-500 text-sm block">{edu.timeline}</span>
-                        <span className="text-gray-600 text-sm">{edu.grade}</span>
+                        <span className="text-muted-foreground text-sm block">{edu.timeline}</span>
+                        <span className="text-foreground text-sm">{edu.grade}</span>
                       </div>
                     </div>
                   </CardContent>
@@ -419,7 +420,7 @@ const Index = () => {
       </section>
 
       {/* Research Section */}
-      <section id="research" className="py-20 relative bg-white">
+      <section id="research" className="py-20 relative bg-background">
         <div className="container mx-auto px-6 max-w-4xl">
           <motion.div 
             initial={{ opacity: 0, y: 50 }} 
@@ -428,7 +429,7 @@ const Index = () => {
             viewport={{ once: true }} 
             className="mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-gray-900">Research & Publications</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-foreground">Research & Publications</h2>
           </motion.div>
 
           <div className="max-w-3xl mx-auto grid gap-6">
@@ -440,11 +441,11 @@ const Index = () => {
                 transition={{ duration: 0.8, delay: index * 0.2 }} 
                 viewport={{ once: true }}
               >
-                <Card className="bg-white border-gray-200 hover:border-gray-300 hover:shadow-lg transition-all duration-300">
+                <Card className="bg-card border-border hover:border-muted-foreground hover:shadow-lg transition-all duration-300">
                   <CardContent className="p-6">
-                    <h3 className="text-lg font-bold mb-2 text-gray-900">{paper.title}</h3>
-                    <p className="text-gray-600 mb-2 font-medium text-sm">{paper.publication}</p>
-                    <p className="text-gray-500 text-sm">{paper.abstract}</p>
+                    <h3 className="text-lg font-bold mb-2 text-foreground">{paper.title}</h3>
+                    <p className="text-muted-foreground mb-2 font-medium text-sm">{paper.publication}</p>
+                    <p className="text-muted-foreground text-sm">{paper.abstract}</p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -454,7 +455,7 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 relative bg-gray-50">
+      <section id="contact" className="py-20 relative bg-muted/50">
         <div className="container mx-auto px-6 max-w-4xl">
           <motion.div 
             initial={{ opacity: 0, y: 50 }} 
@@ -463,8 +464,8 @@ const Index = () => {
             viewport={{ once: true }} 
             className="mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-gray-900">Get in Touch</h2>
-            <p className="text-lg text-gray-700 max-w-xl">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-foreground">Get in Touch</h2>
+            <p className="text-lg text-muted-foreground max-w-xl">
               Ready to collaborate or discuss opportunities? Feel free to reach out through any of the channels below.
             </p>
           </motion.div>
@@ -476,40 +477,40 @@ const Index = () => {
             viewport={{ once: true }} 
             className="max-w-xl mx-auto"
           >
-            <Card className="bg-white border-gray-200 shadow-sm">
+            <Card className="bg-card border-border shadow-sm">
               <CardContent className="p-8">
                 <div className="space-y-6">
                   <div className="flex items-center space-x-4">
-                    <div className="bg-gray-900 p-3 rounded-lg">
-                      <Mail size={20} className="text-white" />
+                    <div className="bg-primary p-3 rounded-lg">
+                      <Mail size={20} className="text-primary-foreground" />
                     </div>
                     <div>
-                      <h3 className="font-medium text-gray-900">Email</h3>
-                      <a href="mailto:aryansingh9503@gmail.com" className="text-gray-700 hover:text-gray-900 transition-colors">
+                      <h3 className="font-medium text-foreground">Email</h3>
+                      <a href="mailto:aryansingh9503@gmail.com" className="text-muted-foreground hover:text-foreground transition-colors">
                         aryansingh9503@gmail.com
                       </a>
                     </div>
                   </div>
 
                   <div className="flex items-center space-x-4">
-                    <div className="bg-gray-900 p-3 rounded-lg">
-                      <Phone size={20} className="text-white" />
+                    <div className="bg-primary p-3 rounded-lg">
+                      <Phone size={20} className="text-primary-foreground" />
                     </div>
                     <div>
-                      <h3 className="font-medium text-gray-900">Phone</h3>
-                      <a href="tel:+917428716989" className="text-gray-700 hover:text-gray-900 transition-colors">
+                      <h3 className="font-medium text-foreground">Phone</h3>
+                      <a href="tel:+917428716989" className="text-muted-foreground hover:text-foreground transition-colors">
                         +91 7428716989
                       </a>
                     </div>
                   </div>
 
                   <div className="flex items-center space-x-4">
-                    <div className="bg-gray-900 p-3 rounded-lg">
-                      <Linkedin size={20} className="text-white" />
+                    <div className="bg-primary p-3 rounded-lg">
+                      <Linkedin size={20} className="text-primary-foreground" />
                     </div>
                     <div>
-                      <h3 className="font-medium text-gray-900">LinkedIn</h3>
-                      <a href="#" className="text-gray-700 hover:text-gray-900 transition-colors">
+                      <h3 className="font-medium text-foreground">LinkedIn</h3>
+                      <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
                         Connect with me on LinkedIn
                       </a>
                     </div>
@@ -527,17 +528,17 @@ const Index = () => {
             className="text-center mt-12"
           >
             <div className="flex justify-center space-x-6">
-              <a href="https://github.com/aryanmarshian" className="text-gray-600 hover:text-gray-900 transition-colors p-2 rounded-lg hover:bg-gray-100">
+              <a href="https://github.com/aryanmarshian" className="text-muted-foreground hover:text-foreground transition-colors p-2 rounded-lg hover:bg-muted">
                 <Github size={28} strokeWidth={1.5} />
               </a>
-              <a href="mailto:aryansingh9503@gmail.com" className="text-gray-600 hover:text-gray-900 transition-colors p-2 rounded-lg hover:bg-gray-100">
+              <a href="mailto:aryansingh9503@gmail.com" className="text-muted-foreground hover:text-foreground transition-colors p-2 rounded-lg hover:bg-muted">
                 <Mail size={28} strokeWidth={1.5} />
               </a>
-              <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors p-2 rounded-lg hover:bg-gray-100">
+              <a href="#" className="text-muted-foreground hover:text-foreground transition-colors p-2 rounded-lg hover:bg-muted">
                 <Linkedin size={28} strokeWidth={1.5} />
               </a>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
